@@ -1,0 +1,70 @@
+/* Dark theme overrides */
+body.dark-theme {
+  background-color: #0b0f14;
+  color: #e6eef8;
+}
+
+/* Links */
+body.dark-theme a {
+  color: #9ad1ff;
+}
+
+/* Navbar overrides */
+body.dark-theme .navbar {
+  background-color: #0d1117 !important;
+  border-color: #1f2630 !important;
+}
+body.dark-theme .navbar .nav-link,
+body.dark-theme .navbar .navbar-brand,
+body.dark-theme .navbar .nav-link:hover {
+  color: #e6eef8 !important;
+}
+
+/* Cards, panels */
+body.dark-theme .card,
+body.dark-theme .bg-white,
+body.dark-theme .border-top,
+body.dark-theme .container {
+  background-color: transparent !important;
+  color: inherit !important;
+  border-color: #22272f !important;
+}
+
+/* Footer */
+body.dark-theme .footer,
+body.dark-theme .footer a {
+  color: #9fb6d6 !important;
+  background-color: transparent !important;
+}
+
+/* Buttons */
+body.dark-theme .btn-outline-secondary {
+  color: #e6eef8;
+  border-color: #2b333b;
+}
+body.dark-theme .btn-outline-secondary:hover {
+  background-color: #21272d;
+  border-color: #3b434a;
+}
+
+/* Tables and forms */
+body.dark-theme table,
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background-color: #0f1418 !important;
+  color: #e6eef8 !important;
+  border-color: #2b333b !important;
+}
+
+/* Utility: force text-dark classes to be readable in dark theme */
+body.dark-theme .text-dark {
+  color: #e6eef8 !important;
+}
+
+/* Specific app components (adjust selectors to real classes if needed) */
+body.dark-theme .movie-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid #1f2630;
+  color: #e6eef8;
+}
