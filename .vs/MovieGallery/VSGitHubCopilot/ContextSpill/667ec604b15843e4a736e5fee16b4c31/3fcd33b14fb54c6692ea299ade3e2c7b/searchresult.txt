@@ -1,0 +1,336 @@
+﻿24 matches found: 
+<match path=E:\Programowanie\MovieGallery\Views\_ViewImports.cshtml>
+    File: `Views/_ViewImports.cshtml`
+```html+razor
+﻿@using MovieGallery
+@using MovieGallery.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\_ViewImports.cshtml>
+    File: `Views/_ViewImports.cshtml`
+```html+razor
+﻿@using MovieGallery
+@using MovieGallery.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieGallery</a>
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieGallery</a>
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\_ViewStart.cshtml>
+    File: `Views/_ViewStart.cshtml`
+```html+razor
+﻿@{
+    Layout = "_Layout";
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_LoginPartial.cshtml>
+    File: `Views/Shared/_LoginPartial.cshtml`
+```html+razor
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Areas\Identity\Pages\_ViewStart.cshtml>
+    File: `Areas/Identity/Pages/_ViewStart.cshtml`
+```html+razor
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\README.md>
+    File: `README.md`
+```markdown
+# MovieGallery
+Movie gallery ASP.NET WebApp with SQL database connection, user login/register, movie review and ratings and AI chat that can suggest movies to watch.
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\README.md>
+    File: `README.md`
+```markdown
+# MovieGallery
+Movie gallery ASP.NET WebApp with SQL database connection, user login/register, movie review and ratings and AI chat that can suggest movies to watch.
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.csproj.FileListAbsolute.txt>
+    // Lines 299 to 303
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.csproj.FileListAbsolute.txt>
+    // Lines 211 to 217
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\lib\jquery\LICENSE.txt>
+    // Lines 1 to 21
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.AssemblyInfo.cs>
+    // Lines 18 to 24
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.AssemblyInfo.cs>
+    // Lines 18 to 24
+</match>
+<match path=E:\Programowanie\MovieGallery\Data\Migrations\00000000000000_CreateIdentitySchema.cs>
+    // Lines 8 to 218
+</match>
+<match path=E:\Programowanie\MovieGallery\Data\Migrations\00000000000000_CreateIdentitySchema.cs>
+    // Lines 74 to 96
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt>
+    // Lines 112 to 121
+</match>
+<match path=E:\Programowanie\MovieGallery\Data\Migrations\20260828165848_MovieGallery.cs>
+    File: `Data/Migrations/20260828165848_MovieGallery.cs`
+```c#
+/*...*/using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MovieGallery.Data.Migrations
+{
+    /// <inheritdoc />
+    public partial class MovieGallery : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Models\ErrorViewModel.cs>
+    File: `Models/ErrorViewModel.cs`
+```c#
+namespace MovieGallery.Models
+{
+    public class ErrorViewModel
+    {
+        public string? RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\css\site.css>
+    File: `wwwroot/css/site.css`
+```css
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+/*    background-color: #2d3033;*/
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/*footer, .container-fluid {
+    background-color: #17181a;
+    color: white;
+}
+
+.container {
+    color: white;
+}*/
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\Error.cshtml>
+    File: `Views/Shared/Error.cshtml`
+```html+razor
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<p>
+    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
+    It can result in displaying sensitive information from exceptions to end users.
+    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
+    and restarting the app.
+</p>
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\css\dark-theme.css>
+    // Lines 41 to 70
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.RazorAssemblyInfo.cs>
+    File: `obj/Debug/net9.0/MovieGallery.RazorAssemblyInfo.cs`
+```c#
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     Ten kod został wygenerowany przez narzędzie.
+//     Wersja wykonawcza:4.0.30319.42000
+//
+//     Zmiany w tym pliku mogą spowodować nieprawidłowe zachowanie i zostaną utracone, jeśli
+//     kod zostanie ponownie wygenerowany.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+using System;
+using System.Reflection;
+
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ProvideApplicationPartFactoryAttribute("Microsoft.AspNetCore.Mvc.ApplicationParts.ConsolidatedAssemblyApplicationPartFact" +
+    "ory, Microsoft.AspNetCore.Mvc.Razor")]
+
+// Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
+
+
+```
+</match>

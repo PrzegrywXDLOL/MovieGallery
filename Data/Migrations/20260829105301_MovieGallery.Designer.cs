@@ -12,7 +12,7 @@ using MovieGallery.Data;
 namespace MovieGallery.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260828165848_MovieGallery")]
+    [Migration("20260829105301_MovieGallery")]
     partial class MovieGallery
     {
         /// <inheritdoc />

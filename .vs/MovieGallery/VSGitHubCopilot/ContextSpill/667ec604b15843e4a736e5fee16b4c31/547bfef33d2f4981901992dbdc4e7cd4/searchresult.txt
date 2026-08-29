@@ -1,0 +1,380 @@
+﻿22 matches found: 
+<match path=E:\Programowanie\MovieGallery\Views\_ViewImports.cshtml>
+    File: `Views/_ViewImports.cshtml`
+```html+razor
+﻿@using MovieGallery
+@using MovieGallery.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\_ViewImports.cshtml>
+    File: `Views/_ViewImports.cshtml`
+```html+razor
+﻿@using MovieGallery
+@using MovieGallery.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieGallery</a>
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieGallery</a>
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\_ViewStart.cshtml>
+    File: `Views/_ViewStart.cshtml`
+```html+razor
+﻿@{
+    Layout = "_Layout";
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\_ViewStart.cshtml>
+    File: `Views/_ViewStart.cshtml`
+```html+razor
+﻿@{
+    Layout = "_Layout";
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_LoginPartial.cshtml>
+    File: `Views/Shared/_LoginPartial.cshtml`
+```html+razor
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_LoginPartial.cshtml>
+    File: `Views/Shared/_LoginPartial.cshtml`
+```html+razor
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Areas\Identity\Pages\_ViewStart.cshtml>
+    File: `Areas/Identity/Pages/_ViewStart.cshtml`
+```html+razor
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Areas\Identity\Pages\_ViewStart.cshtml>
+    File: `Areas/Identity/Pages/_ViewStart.cshtml`
+```html+razor
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_ValidationScriptsPartial.cshtml>
+    File: `Views/Shared/_ValidationScriptsPartial.cshtml`
+```html+razor
+﻿<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\README.md>
+    File: `README.md`
+```markdown
+# MovieGallery
+Movie gallery ASP.NET WebApp with SQL database connection, user login/register, movie review and ratings and AI chat that can suggest movies to watch.
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Program.cs>
+    File: `Program.cs`
+```c#
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using MovieGallery.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseMigrationsEndPoint();
+}
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapStaticAssets();
+
+app.MapControllerRoute(
+    name: "default",
+    /*...*/
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Home\Index.cshtml>
+    File: `Views/Home/Index.cshtml`
+```html+razor
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Home\Index.cshtml>
+    File: `Views/Home/Index.cshtml`
+```html+razor
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\scopedcss\bundle\MovieGallery.styles.css>
+    // Lines 27 to 49
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\scopedcss\projectbundle\MovieGallery.bundle.scp.css>
+    // Lines 27 to 49
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\css\site.css>
+    File: `wwwroot/css/site.css`
+```css
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+/*    background-color: #2d3033;*/
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/*footer, .container-fluid {
+    background-color: #17181a;
+    color: white;
+}
+
+.container {
+    color: white;
+}*/
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Data\Migrations\00000000000000_CreateIdentitySchema.cs>
+    // Lines 141 to 166
+</match>
+<match path=E:\Programowanie\MovieGallery\Data\Migrations\00000000000000_CreateIdentitySchema.cs>
+    // Lines 74 to 96
+</match>
