@@ -1,0 +1,279 @@
+﻿24 matches found: 
+<match path=E:\Programowanie\MovieGallery\Models\Movie.cs>
+    File: `Models/Movie.cs`
+```c#
+namespace MovieGallery.Models
+{
+    public class Movie
+    {
+        public static List<Movie> list { get; set; } = new List<Movie>();
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Director { get; set; }
+        public DateOnly ReleaseDate { get; set; }
+        public byte[]? Poster { get; set; }
+    }
+}
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Models\Movie.cs>
+    File: `Models/Movie.cs`
+```c#
+namespace MovieGallery.Models
+{
+    public class Movie
+    {
+        public static List<Movie> list { get; set; } = new List<Movie>();
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Director { get; set; }
+        public DateOnly ReleaseDate { get; set; }
+        public byte[]? Poster { get; set; }
+    }
+}
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\MoviesController.cs>
+    // Lines 23 to 52
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\MoviesController.cs>
+    // Lines 23 to 52
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\547bfef33d2f4981901992dbdc4e7cd4\searchresult.txt>
+    // Lines 211 to 253
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\547bfef33d2f4981901992dbdc4e7cd4\searchresult.txt>
+    // Lines 211 to 253
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\c790e64f83954459b8e9deac5fd2ef3f\searchresult.txt>
+    File: `...3e4a736e5fee16b4c31/c790e64f83954459b8e9deac5fd2ef3f/searchresult.txt`
+````text
+﻿18 matches found: 
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+...
+````
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\c790e64f83954459b8e9deac5fd2ef3f\searchresult.txt>
+    File: `...3e4a736e5fee16b4c31/c790e64f83954459b8e9deac5fd2ef3f/searchresult.txt`
+````text
+﻿18 matches found: 
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+...
+````
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\ce7e599f8c7f48f78eeb95aa0b4092f0\searchresult.txt>
+    // Lines 48 to 94
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\Interfaces\IMovieService.cs>
+    File: `Services/Interfaces/IMovieService.cs`
+```c#
+/*...*/using MovieGallery.Models;
+
+namespace MovieGallery.Services.Interfaces
+{
+    public interface IMovieService
+    {
+        Task Add(Movie movie);
+        Task Delete(int id);
+        Task<Movie> Get(int id);
+        Task Update(Movie movie);
+        Task<IEnumerable<Movie>> GetAll();
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Movies\Add.cshtml>
+    // Lines 24 to 48
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Movies\Add.cshtml>
+    // Lines 24 to 48
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.csproj.FileListAbsolute.txt>
+    // Lines 217 to 223
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\3fcd33b14fb54c6692ea299ade3e2c7b\searchresult.txt>
+    // Lines 127 to 153
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\3fcd33b14fb54c6692ea299ade3e2c7b\searchresult.txt>
+    // Lines 102 to 127
+</match>
+<match path=E:\Programowanie\MovieGallery\README.md>
+    File: `README.md`
+```markdown
+# MovieGallery
+Movie gallery ASP.NET WebApp with SQL database connection, user login/register, movie review and ratings and AI chat that can suggest movies to watch.
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\js\site.js>
+    // Lines 10 to 15
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\js\site.js>
+    File: `wwwroot/js/site.js`
+```javascript
+/*...*/// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+// for details on configuring this project to bundle and minify static web assets.
+
+// Write your JavaScript code.
+
+(function () {
+
+    const key = 'mv-theme';
+    const toggle = document.getElementById('theme-toggle');
+
+    function apply(theme) {
+        /*...*/
+    }
+
+    const stored = localStorage.getItem(key);
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = stored || (prefersDark ? 'dark' : 'light');
+    apply(initial);
+
+    if (toggle) {
+        toggle.addEventListener('click', function () {
+            const nowDark = document.body.classList.contains('dark-theme');
+            const next = nowDark ? 'light' : 'dark';
+            apply(next);
+            localStorage.setItem(key, next);
+        });
+    }
+})();
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt>
+    // Lines 56 to 68
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt>
+    File: `obj/Debug/net9.0/staticwebassets.upToDateCheck.txt`
+```text
+wwwroot\favicon.ico
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\lib\jquery\LICENSE.txt>
+    // Lines 1 to 21
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\scopedcss\bundle\MovieGallery.styles.css>
+    // Lines 27 to 49
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieGallery</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\7d8503214f9542dbb24185d3152c1849\searchresult.txt>
+    // Lines 175 to 198
+</match>

@@ -28,3 +28,42 @@
         });
     }
 })();
+
+function previewImage(event) {
+    const input = event.target;
+    const preview = document.getElementById('previewImage');
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = '/Img/Placeholder.jpg';
+    }
+}
+function clearPosterSelection() {
+    const input = document.getElementById('PosterFileInput');
+    const preview = document.getElementById('previewImage');
+
+    try {
+        if (preview && preview.src && preview.src.startsWith('blob:')) {
+            URL.revokeObjectURL(preview.src);
+        }
+    } catch (e) {
+    }
+
+    if (input) {
+        try {
+            input.value = '';
+        } catch (e) {
+            const newInput = input.cloneNode(true);
+            input.parentNode.replaceChild(newInput, input);
+        }
+    }
+
+    if (preview) {
+        preview.src = '/Img/Placeholder.jpg';
+    }
+}

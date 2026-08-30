@@ -289,8 +289,6 @@ E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.pdb
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.genruntimeconfig.cache
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\ref\MovieGallery.dll
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.sourcelink.json
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\86g38uwcqb-0zs2cmeivx.gz
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\gimhycsfp2-o7f602byub.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\29ro726o53-pj5nd1wqec.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\kjd2fv32x8-v0zj4ognzu.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\lt8zbb35ys-37tfw0ft22.gz
@@ -300,3 +298,5 @@ E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\rizcwurimi-ft3s53vfgj.
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\1vt8ucxbtz-s35ty4nyc5.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\u95lihlv7p-46ein0sx1k.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\86g38uwcqb-dsfnnipd8j.gz
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\gimhycsfp2-bmrsib8s8d.gz
