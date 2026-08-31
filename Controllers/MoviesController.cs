@@ -15,6 +15,16 @@ namespace MovieGallery.Controllers
         {
             return View(await _movieService.GetAll());
         }
+        public async Task<IActionResult> GetPoster(int id)
+        {
+            var movie = await _movieService.Get(id);
+            if (movie?.Poster == null)
+            {
+                return File("~/Img/Placeholder.jpg", "image/jpeg");
+            }
+            return File(movie.Poster, "image/jpeg");
+        }
+
         [HttpGet]
         public IActionResult Add()
         {
