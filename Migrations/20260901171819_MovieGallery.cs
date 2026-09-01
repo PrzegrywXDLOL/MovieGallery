@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace MovieGallery.Data.Migrations
+namespace MovieGallery.Migrations
 {
     /// <inheritdoc />
     public partial class MovieGallery : Migration

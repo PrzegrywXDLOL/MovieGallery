@@ -1,0 +1,38 @@
+﻿@model MovieGallery.Models.Movie
+@{
+    ViewData["Title"] = "Movie Details";
+}
+<h1 style="justify-self:center;">@Model.Title</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 d-flex justify-content-center">
+        <div>
+            <div id="posterPreview" style="display: flex; align-items: center; justify-content: center; min-width:40.5vh;
+                                            max-width:40.5vh; max-height:60vh; min-height:60vh;">
+                <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
+                                                border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 justify-content-center">
+        <h2 style="justify-self:center;">Movie Details</h2>
+        <div>
+            <h4>Director:</h4>
+            <p>@Model.Director</p>
+            <h4>Genre:</h4>
+            <p>@Model.Genre</p>
+            <h4>Release Date:</h4>
+            <p>@Model.ReleaseDate.ToString("dd-MM-yyyy")</p>
+            <h4>Description:</h4>
+            <p>@Model.Description</p>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

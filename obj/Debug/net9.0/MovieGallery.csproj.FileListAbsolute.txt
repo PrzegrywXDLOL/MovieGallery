@@ -296,7 +296,7 @@ E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\miza4k38y7-pk9g2wxc8p.
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\rizcwurimi-ft3s53vfgj.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\1vt8ucxbtz-s35ty4nyc5.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\u95lihlv7p-46ein0sx1k.gz
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\gimhycsfp2-ehzwveg8m1.gz
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\nkoybbpgvo-a1bf7o50yx.gz
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\86g38uwcqb-8gvi88jln0.gz
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\gimhycsfp2-v33ekc02wo.gz
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\86g38uwcqb-lv1r7sqp0m.gz

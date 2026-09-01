@@ -67,3 +67,6 @@ function clearPosterSelection() {
         preview.src = '/Img/Placeholder.jpg';
     }
 }
+function updateCount(el) {
+    document.getElementById('charCount').innerText = el.value.length;
+    }

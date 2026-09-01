@@ -25,32 +25,49 @@
                         <span asp-validation-for="Director" class="text-danger"></span>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4" style="margin-bottom:2.5vh">
+                <div class="col-md-4">
                     <div class="form-group">
                         <label asp-for="ReleaseDate" class="control-label">Release Date</label>
                         <input type="date" asp-for="ReleaseDate" class="form-control" />
                         <span asp-validation-for="ReleaseDate" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col-md-7" style="margin-bottom:2.5vh">
-                    <div class="form-group">
-                        <label asp-for="Poster" class="control-label"></label>
-                        <input id="PosterFileInput" type="file" asp-for="Poster" class="form-control" accept=".jpg,.jpeg,image/jpeg" onchange="previewImage(event)" />
-                        <span asp-validation-for="Poster" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:2.5vh">
-                    <div class="form-group">
+                <div class="col-md-8">
+                    <label asp-for="Poster" class="control-label"></label>
+                    <div class="form-group" style="display:flex">
+                        <input id="PosterFileInput" type="file" asp-for="Poster" class="form-control" accept=".jpg,.jpeg,image/jpeg" onchange="previewImage(event)"/>
                         <button type="button" class="btn btn-primary" onclick="clearPosterSelection()">⌫</button>
+                        <span asp-validation-for="Poster" class="text-danger"></span> 
                     </div>
                 </div>
-                <div class="form-group text-center" style="margin-bottom:2.5vh">
-                    <input type="submit" value="Add Movie" class="btn btn-primary btn-lg" style="width: 200px;" />
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Genre" class="control-label">Genre</label>
+                        <select asp-for="Genre" name="Genre" class="form-control" multiple size="8">
+                            @if (ViewBag.Genres != null)
+                            {
+                                foreach (var genre in ViewBag.Genres)
+                                {
+                                    <option value="@genre">@genre</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="Genre" class="text-danger"></span>
+                        <span style="font-size:0.8rem;">Press Ctrl (Cmd) to choose more</span> 
+                    </div>
                 </div>
-                <div class="text-center">
-                    <a asp-action="Index">Back to Home</a>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control" maxlength="250" oninput="updateCount(this)" style="height:20vh"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                        <small class="form-text text-muted">
+                            <span id="charCount">0</span> / 250
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="Add Movie" class="btn btn-primary btn-lg" style="width: 200px;" />
                 </div>
             </div>
         </form>

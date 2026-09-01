@@ -28,11 +28,35 @@ namespace MovieGallery.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            var genreList = new List<string>
+            {
+                "Action",
+                "Animation",
+                "Biography",
+                "Documentary",
+                "Drama",
+                "Fantasy",
+                "Horror",
+                "Comedy",
+                "Crime",
+                "Musical",
+                "Adventure",
+                "Romance",
+                "Sci-Fi",
+                "Thriller",
+                "Western",
+                "Superhero"
+            };
+
+            genreList.Sort();
+            ViewBag.Genres = genreList;
+
             return View();
         }
         
         [HttpPost]
-        public async Task<IActionResult> Add(Movie movie)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Add(Movie movie, string[] Genres)
         {
             var file = Request.Form.Files.FirstOrDefault();
 
@@ -57,7 +81,18 @@ namespace MovieGallery.Controllers
                 }
             }
 
+            movie.Genre = string.Join(", ", Genres);
+
             await _movieService.Add(movie);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var car = await _movieService.Get(id);
+            if (car != null)
+                return View(car);
+
             return RedirectToAction("Index");
         }
 

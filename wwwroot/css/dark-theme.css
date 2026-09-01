@@ -142,3 +142,15 @@ footer {
 .row-carousel{
     margin:0px;
 }
+
+.form-group {
+    margin-bottom:2.5vh
+}
+
+body.dark-theme .text-muted {
+    color: white !important;
+}
+
+textarea {
+    resize: none;
+}
