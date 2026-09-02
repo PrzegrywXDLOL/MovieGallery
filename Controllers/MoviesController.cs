@@ -13,16 +13,16 @@ namespace MovieGallery.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _movieService.GetAll());
+            return View(await _movieService.GetTitle());
         }
         public async Task<IActionResult> GetPoster(int id)
         {
-            var movie = await _movieService.Get(id);
-            if (movie?.Poster == null)
+            var poster = await _movieService.Poster(id);
+            if (poster == null)
             {
                 return File("~/Img/Placeholder.jpg", "image/jpeg");
             }
-            return File(movie.Poster, "image/jpeg");
+            return File(poster, "image/jpeg");
         }
 
         [HttpGet]
@@ -89,9 +89,9 @@ namespace MovieGallery.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var car = await _movieService.Get(id);
-            if (car != null)
-                return View(car);
+            var movie = await _movieService.Details(id);
+            if (movie != null)
+                return View(movie);
 
             return RedirectToAction("Index");
         }

@@ -43,7 +43,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="Genre" class="control-label">Genre</label>
-                        <select asp-for="Genre" name="Genre" class="form-control" multiple size="8">
+                        <select asp-for="Genre" name="Genres" class="form-control" multiple size="8">
                             @if (ViewBag.Genres != null)
                             {
                                 foreach (var genre in ViewBag.Genres)

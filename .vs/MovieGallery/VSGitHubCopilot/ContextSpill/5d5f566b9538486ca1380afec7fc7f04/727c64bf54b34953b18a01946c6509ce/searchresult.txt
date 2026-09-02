@@ -1,0 +1,496 @@
+﻿35 matches found: 
+<match path=E:\Programowanie\MovieGallery\Views\Movies\Index.cshtml>
+    File: `Views/Movies/Index.cshtml`
+```html+razor
+﻿@model IEnumerable<MovieGallery.Models.Movie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container my-5 d-flex align-items-center justify-content-center" style="min-height: 70vh;">
+    @if (Model.Count()>0)
+    {
+        <div id="movieCarousel" class="carousel slide w-100">
+            <div class="carousel-inner">
+                @{
+                    int totalItems = Model.Count();
+                    int itemsPerSlide = 3;
+                    int totalSlides = (int)Math.Ceiling((double)totalItems / itemsPerSlide);
+                    var moviesList = Model.ToList();
+                }
+                @for (int slideIndex = 0; slideIndex < totalSlides; slideIndex++)
+                {
+                    var slideItems = moviesList.Skip(slideIndex * itemsPerSlide).Take(itemsPerSlide).ToList();
+                    <div class="carousel-item @(slideIndex == 0 ? "active" : "")">
+                        <div class="row row-carousel justify-content-center">
+                            @foreach (var item in slideItems)
+                            {
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Movies\Index.cshtml>
+    // Lines 46 to 54
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\547bfef33d2f4981901992dbdc4e7cd4\searchresult.txt>
+    // Lines 285 to 316
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\547bfef33d2f4981901992dbdc4e7cd4\searchresult.txt>
+    // Lines 169 to 211
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"/>
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Movies" asp-action="Index"><img src="~/Img/banner.png" style="max-height:64px; max-width:128px;"/></a>
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_Layout.cshtml>
+    File: `Views/Shared/_Layout.cshtml`
+```html+razor
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieGallery</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"/>
+    <link rel="stylesheet" href="~/MovieGallery.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Movies" asp-action="Index"><img src="~/Img/banner.png" style="max-height:64px; max-width:128px;"/></a>
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\3fcd33b14fb54c6692ea299ade3e2c7b\searchresult.txt>
+    // Lines 154 to 183
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\3fcd33b14fb54c6692ea299ade3e2c7b\searchresult.txt>
+    // Lines 127 to 153
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\a3d7330f5f424acf939a5ff32407ea4d\searchresult.txt>
+    // Lines 111 to 157
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\a3d7330f5f424acf939a5ff32407ea4d\searchresult.txt>
+    // Lines 75 to 111
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\c790e64f83954459b8e9deac5fd2ef3f\searchresult.txt>
+    File: `...3e4a736e5fee16b4c31/c790e64f83954459b8e9deac5fd2ef3f/searchresult.txt`
+````text
+﻿18 matches found: 
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+...
+````
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\c790e64f83954459b8e9deac5fd2ef3f\searchresult.txt>
+    File: `...3e4a736e5fee16b4c31/c790e64f83954459b8e9deac5fd2ef3f/searchresult.txt`
+````text
+﻿18 matches found: 
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Models;
+
+namespace MovieGallery.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\HomeController.cs>
+    File: `Controllers/HomeController.cs`
+```c#
+...
+````
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\MoviesController.cs>
+    // Lines 8 to 97
+</match>
+<match path=E:\Programowanie\MovieGallery\Controllers\MoviesController.cs>
+    // Lines 9 to 26
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\5d5f566b9538486ca1380afec7fc7f04\fc21108668074616818c5011abe7e82e\searchresult.txt>
+    // Lines 144 to 171
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\5d5f566b9538486ca1380afec7fc7f04\fc21108668074616818c5011abe7e82e\searchresult.txt>
+    // Lines 144 to 171
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\MovieService.cs>
+    File: `Services/MovieService.cs`
+```c#
+/*...*/using MovieGallery.Models;
+using MovieGallery.Services.Interfaces;
+
+namespace MovieGallery.Services
+{
+    public class MovieService : IMovieService
+    {
+        private readonly IMovieDBService _db;
+        public MovieService(IMovieDBService db)
+        {
+            _db = db;
+        }
+
+        private Movie Upper(Movie movie)
+        {
+            movie.Title = movie.Title.ToUpper();
+            movie.Director = movie.Director.ToUpper();
+            return movie;
+        }
+
+        public async Task Add(Movie movie)
+        {
+            movie = Upper(movie);
+            await _db.Add(movie);
+        }
+
+        public async Task Delete(int id)
+        {
+            await _db.Delete(id);
+        }
+
+        public async Task<Movie> Get(int id)
+        {
+            return await _db.Get(id);
+        }
+        public async Task Update(Movie movie)
+        {
+            movie = Upper(movie);
+            await _db.Update(movie);
+        }
+        public async Task<IEnumerable<Movie>> GetAll()
+        {
+            return await _db.GetAll();
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\MovieService.cs>
+    File: `Services/MovieService.cs`
+```c#
+/*...*/using MovieGallery.Models;
+using MovieGallery.Services.Interfaces;
+
+namespace MovieGallery.Services
+{
+    public class MovieService : IMovieService
+    {
+        private readonly IMovieDBService _db;
+        public MovieService(IMovieDBService db)
+        {
+            _db = db;
+        }
+
+        private Movie Upper(Movie movie)
+        {
+            movie.Title = movie.Title.ToUpper();
+            movie.Director = movie.Director.ToUpper();
+            return movie;
+        }
+
+        public async Task Add(Movie movie)
+        {
+            movie = Upper(movie);
+            await _db.Add(movie);
+        }
+
+        public async Task Delete(int id)
+        {
+            await _db.Delete(id);
+        }
+
+        public async Task<Movie> Get(int id)
+        {
+            return await _db.Get(id);
+        }
+        public async Task Update(Movie movie)
+        {
+            movie = Upper(movie);
+            await _db.Update(movie);
+        }
+        public async Task<IEnumerable<Movie>> GetAll()
+        {
+            return await _db.GetAll();
+        }
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\MovieDBService.cs>
+    // Lines 8 to 48
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\MovieDBService.cs>
+    // Lines 8 to 48
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\561711195d254541bc3b6918be94a362\searchresult.txt>
+    // Lines 64 to 89
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\561711195d254541bc3b6918be94a362\searchresult.txt>
+    // Lines 167 to 196
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\Interfaces\IMovieService.cs>
+    File: `Services/Interfaces/IMovieService.cs`
+```c#
+/*...*/using MovieGallery.Models;
+
+namespace MovieGallery.Services.Interfaces
+{
+    public interface IMovieService
+    {
+        Task Add(Movie movie);
+        Task Delete(int id);
+        Task<Movie> Get(int id);
+        Task Update(Movie movie);
+        Task<IEnumerable<Movie>> GetAll();
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Services\Interfaces\IMovieDBService.cs>
+    File: `Services/Interfaces/IMovieDBService.cs`
+```c#
+/*...*/using MovieGallery.Models;
+namespace MovieGallery.Services.Interfaces
+{
+    public interface IMovieDBService
+    {
+        Task Add(Movie movie);
+        Task Delete(int id);
+        Task<Movie> Get(int id);
+        Task<IEnumerable<Movie>> GetAll();
+        Task Update(Movie movie);
+    }
+}
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Shared\_LoginPartial.cshtml>
+    File: `Views/Shared/_LoginPartial.cshtml`
+```html+razor
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+...
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Home\Index.cshtml>
+    File: `Views/Home/Index.cshtml`
+```html+razor
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Models\Movie.cs>
+    File: `Models/Movie.cs`
+```c#
+namespace MovieGallery.Models
+{
+    public class Movie
+    {
+        public static List<Movie> list { get; set; } = new List<Movie>();
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Director { get; set; }
+        public DateOnly ReleaseDate { get; set; }
+        public byte[]? Poster { get; set; }
+        public string Genre { get; set; }
+        public string Description { get; set; }
+    }
+}
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\Models\Movie.cs>
+    File: `Models/Movie.cs`
+```c#
+namespace MovieGallery.Models
+{
+    public class Movie
+    {
+        public static List<Movie> list { get; set; } = new List<Movie>();
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Director { get; set; }
+        public DateOnly ReleaseDate { get; set; }
+        public byte[]? Poster { get; set; }
+        public string Genre { get; set; }
+        public string Description { get; set; }
+    }
+}
+```
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.csproj.FileListAbsolute.txt>
+    // Lines 211 to 217
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.csproj.FileListAbsolute.txt>
+    // Lines 241 to 247
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Movies\Add.cshtml>
+    // Lines 42 to 63
+</match>
+<match path=E:\Programowanie\MovieGallery\Views\Movies\Add.cshtml>
+    // Lines 42 to 63
+</match>
+<match path=E:\Programowanie\MovieGallery\obj\Debug\net9.0\scopedcss\bundle\MovieGallery.styles.css>
+    // Lines 27 to 49
+</match>
+<match path=E:\Programowanie\MovieGallery\.vs\MovieGallery\VSGitHubCopilot\ContextSpill\667ec604b15843e4a736e5fee16b4c31\ce7e599f8c7f48f78eeb95aa0b4092f0\searchresult.txt>
+    // Lines 368 to 385
+</match>
+<match path=E:\Programowanie\MovieGallery\wwwroot\js\site.js>
+    File: `wwwroot/js/site.js`
+```javascript
+/*...*/// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+// for details on configuring this project to bundle and minify static web assets.
+
+// Write your JavaScript code.
+
+(function () {
+
+    const key = 'mv-theme';
+    const toggle = document.getElementById('theme-toggle');
+
+    function apply(theme) {
+        /*...*/
+    }
+
+    const stored = localStorage.getItem(key);
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = stored || (prefersDark ? 'dark' : 'light');
+    apply(initial);
+
+    if (toggle) {
+        toggle.addEventListener('click', function () {
+            const nowDark = document.body.classList.contains('dark-theme');
+            const next = nowDark ? 'light' : 'dark';
+            apply(next);
+            localStorage.setItem(key, next);
+        });
+    }
+})();
+
+function previewImage(event) {
+    /*...*/
+}
+function clearPosterSelection() {
+    /*...*/
+}
+function updateCount(el) {
+    /*...*/}
+```
+</match>

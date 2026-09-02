@@ -11,16 +11,31 @@ namespace MovieGallery.Services
         {
             _db = db;
         }
-
-        public async Task<IEnumerable<Movie>> GetAll()
+        public async Task<IEnumerable<Movie>> GetTitle()
         {
-            return await _db.Movies.ToListAsync();
+            return await _db.Movies
+                .Select(m => new Movie
+                {
+                    Id = m.Id,
+                    Title = m.Title
+                })
+                .ToListAsync();
         }
 
         public async Task<Movie> Get(int id)
         {
             return await _db.Movies.FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        public async Task<byte[]?> Poster(int id)
+        {
+            var poster = await _db.Movies
+                .Where(m => m.Id == id)
+                .Select(m => m.Poster)
+                .FirstOrDefaultAsync();
+            return poster;
+        }
+
         public async Task Update(Movie movie)
         {
             var tempMovie = await Get(movie.Id);
@@ -45,6 +60,23 @@ namespace MovieGallery.Services
                 _db.Movies.Remove(movie);
                 await _db.SaveChangesAsync();
             }
+        }
+
+        public async Task<Movie> Details(int id)
+        {
+            var movie = await _db.Movies
+                .Where(m => m.Id == id)
+                .Select(m => new Movie
+                {
+                    Id = m.Id,
+                    Title = m.Title,
+                    Director = m.Director,
+                    ReleaseDate = m.ReleaseDate,
+                    Genre = m.Genre,
+                    Description = m.Description
+                })
+                .FirstOrDefaultAsync();
+            return movie;
         }
     }
 }

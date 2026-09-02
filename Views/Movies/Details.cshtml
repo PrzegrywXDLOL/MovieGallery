@@ -6,14 +6,12 @@
 <hr />
 
 <div class="row">
-    <div class="col-md-6 d-flex justify-content-center">
-        <div>
-            <div id="posterPreview" style="display: flex; align-items: center; justify-content: center; min-width:40.5vh;
-                                            max-width:40.5vh; max-height:60vh; min-height:60vh;">
-                <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
+    <div class="col-md-6 d-flex flex-column align-items-center">
+        <div id="posterPreview" style="display: flex; min-width:40.5vh; max-width:40.5vh; max-height:60vh; min-height:60vh; margin-bottom:2.5vh">
+            <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
                                                 border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
-            </div>
         </div>
+        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Movies" asp-action="Edit" style="margin-bottom:2.5vh; ">Edit Movie Details</a>
     </div>
     <div class="col-md-6 justify-content-center">
         <h2 style="justify-self:center;">Movie Details</h2>
@@ -27,7 +25,6 @@
             <h4>Description:</h4>
             <p>@Model.Description</p>
         </div>
-
     </div>
 </div>
 

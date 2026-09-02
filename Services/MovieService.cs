@@ -38,9 +38,17 @@ namespace MovieGallery.Services
             movie = Upper(movie);
             await _db.Update(movie);
         }
-        public async Task<IEnumerable<Movie>> GetAll()
+        public async Task<IEnumerable<Movie>> GetTitle()
         {
-            return await _db.GetAll();
+            return await _db.GetTitle();
+        }
+        public async Task<byte[]?> Poster(int id)
+        {
+            return await _db.Poster(id);
+        }
+        public async Task<Movie> Details(int id)
+        {
+            return await _db.Details(id);
         }
     }
 }
