@@ -154,3 +154,8 @@ body.dark-theme .text-muted {
 textarea {
     resize: none;
 }
+
+.review-container {
+    min-block-size: 24vh;
+    max-block-size: 24vh;
+}

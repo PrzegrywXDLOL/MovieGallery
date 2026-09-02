@@ -44,6 +44,10 @@ namespace MovieGallery.Services
                 tempMovie.Title = movie.Title;
                 tempMovie.Director = movie.Director;
                 tempMovie.ReleaseDate = movie.ReleaseDate;
+                if (movie.Poster != null && movie.Poster.Length > 0)
+                    tempMovie.Poster = movie.Poster;
+                tempMovie.Genre = movie.Genre;
+                tempMovie.Description = movie.Description;
                 await _db.SaveChangesAsync();
             }
         }

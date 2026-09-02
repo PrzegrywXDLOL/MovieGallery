@@ -1,13 +1,13 @@
 ﻿@model MovieGallery.Models.Movie
 @{
-    ViewData["Title"] = "Add Movie";
+    ViewData["Title"] = "Edit Details";
 }
 <h1 style="justify-self:center;">@ViewData["Title"]</h1>
 <hr />
 
 <div class="row">
     <div class="col-md-6 align-content-center">
-        <form asp-action="Add" enctype="multipart/form-data">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @Html.AntiForgeryToken()
             <div class="row" style="margin-bottom:2.5vh">
@@ -42,8 +42,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Genre" class="control-label">Genre</label>
-                        <select asp-for="Genre" name="Genre" class="form-control" multiple size="8">
+                        <label asp-for="SelectedGenres" class="control-label">Genre</label>
+                        <select asp-for="SelectedGenres" name="SelectedGenres" class="form-control" multiple size="8">
                             @if (ViewBag.Genre != null)
                             {
                                 foreach (var genre in ViewBag.Genre)
@@ -52,8 +52,8 @@
                                 }
                             }
                         </select>
-                        <span asp-validation-for="Genre" class="text-danger"></span>
-                        <span style="font-size:0.8rem;">Press Ctrl (Cmd) to choose more</span> 
+                        <span asp-validation-for="SelectedGenres" class="text-danger"></span>
+                        <span style="font-size:0.8rem;">Press Ctrl (Cmd) to choose more</span>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <input type="submit" value="Add Movie" class="btn btn-primary btn-lg" style="width: 200px;" />
+                    <input type="submit" value="Edit Movie" class="btn btn-primary btn-lg" style="width: 200px;" />
                 </div>
             </div>
         </form>
@@ -77,8 +77,8 @@
             <h2 style="justify-self:center;">Poster preview</h2>
             <div id="posterPreview" style="display: flex; align-items: center; justify-content: center; min-width:40.5vh;
                                             max-width:40.5vh; max-height:60vh; min-height:60vh;">
-                <img id="previewImage" src="~/Img/Placeholder.jpg" alt="Poster preview" class="img-fluid" style="object-fit: fill; width:100%;
-                                                                                     border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
+                <img id="previewImage" src="@Url.Action("GetPoster", "Movies", new { id = @Model.Id })" alt="Poster preview" class="img-fluid" 
+                    style="object-fit: fill; width:100%;border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
             </div>
         </div>
     </div>

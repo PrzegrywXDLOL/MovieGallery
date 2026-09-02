@@ -11,19 +11,30 @@
             <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
                                                 border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
         </div>
-        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Movies" asp-action="Edit" style="margin-bottom:2.5vh; ">Edit Movie Details</a>
+        <a class="btn btn-primary btn-lg" asp-area="" asp-action="Edit" asp-route-id="@Model.Id" style="margin-bottom:2.5vh;">Edit Movie Details</a>
     </div>
     <div class="col-md-6 justify-content-center">
         <h2 style="justify-self:center;">Movie Details</h2>
-        <div>
-            <h4>Director:</h4>
-            <p>@Model.Director</p>
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Director:</h4>
+                <p>@Model.Director</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Release Date:</h4>
+                <p>@Model.ReleaseDate.ToString("dd-MM-yyyy")</p>
+            </div>
             <h4>Genre:</h4>
             <p>@Model.Genre</p>
-            <h4>Release Date:</h4>
-            <p>@Model.ReleaseDate.ToString("dd-MM-yyyy")</p>
+            @* cast?? *@
             <h4>Description:</h4>
             <p>@Model.Description</p>
+            <div class="text-center">
+                <h3>Reviews:</h3>
+                <div class="review-container">
+                </div>
+                <a class="btn btn-primary btn-lg" asp-area="" asp-action="Review" asp-route-id="@Model.Id" style="margin-bottom:2.5vh;">Add Movie Review</a>
+            </div>
         </div>
     </div>
 </div>

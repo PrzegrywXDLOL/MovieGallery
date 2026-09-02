@@ -4,8 +4,29 @@ using MovieGallery.Services.Interfaces;
 
 namespace MovieGallery.Controllers
 {
+
     public class MoviesController : Controller
     {
+        List<string> genreList = new List<string>
+            {
+                "Action",
+                "Animation",
+                "Biography",
+                "Documentary",
+                "Drama",
+                "Fantasy",
+                "Horror",
+                "Comedy",
+                "Crime",
+                "Musical",
+                "Adventure",
+                "Romance",
+                "Sci-Fi",
+                "Thriller",
+                "Western",
+                "Superhero",
+                "History"
+            };
         private readonly IMovieService _movieService;
         public MoviesController(IMovieService movieService)
         {
@@ -28,35 +49,15 @@ namespace MovieGallery.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            var genreList = new List<string>
-            {
-                "Action",
-                "Animation",
-                "Biography",
-                "Documentary",
-                "Drama",
-                "Fantasy",
-                "Horror",
-                "Comedy",
-                "Crime",
-                "Musical",
-                "Adventure",
-                "Romance",
-                "Sci-Fi",
-                "Thriller",
-                "Western",
-                "Superhero"
-            };
-
             genreList.Sort();
-            ViewBag.Genres = genreList;
+            ViewBag.Genre = genreList;
 
             return View();
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add(Movie movie, string[] Genres)
+        public async Task<IActionResult> Add(Movie movie, string[] Genre)
         {
             var file = Request.Form.Files.FirstOrDefault();
 
@@ -81,7 +82,7 @@ namespace MovieGallery.Controllers
                 }
             }
 
-            movie.Genre = string.Join(", ", Genres);
+            movie.Genre = string.Join(", ", Genre);
 
             await _movieService.Add(movie);
             return RedirectToAction("Index");
@@ -96,5 +97,53 @@ namespace MovieGallery.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var movie = await _movieService.Get(id);
+            if (movie != null) {
+                if (!string.IsNullOrEmpty(movie.Genre))
+                    movie.SelectedGenres = movie.Genre.Split(", ", StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                genreList.Sort();
+                ViewBag.Genre = genreList;
+
+                return View(movie);
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Movie movie, string[] Genre)
+        {
+            var file = Request.Form.Files.FirstOrDefault();
+
+            if (file != null && file.Length > 0)
+            {
+                if (file.ContentType != "image/jpeg")
+                {
+                    ModelState.AddModelError("Poster", "Only JGP/JPEG format is allowed");
+                    return View(movie);
+                }
+
+                var extension = Path.GetExtension(file.FileName).ToLower();
+                if (extension != ".jpg" && extension != ".jpeg")
+                {
+                    ModelState.AddModelError("Poster", "File must have .JPG or .JPEG format");
+                    return View(movie);
+                }
+                using (var ms = new MemoryStream())
+                {
+                    await file.CopyToAsync(ms);
+                    movie.Poster = ms.ToArray();
+                }
+            }
+
+            movie.Genre = string.Join(", ", movie.SelectedGenres);
+
+            await _movieService.Update(movie);
+            return RedirectToAction("Index");
+        }
     }
 }
