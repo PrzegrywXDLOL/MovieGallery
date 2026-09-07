@@ -43,6 +43,7 @@ namespace MovieGallery.Services
             {
                 tempMovie.Title = movie.Title;
                 tempMovie.Director = movie.Director;
+                tempMovie.Cast = movie.Cast;
                 tempMovie.ReleaseDate = movie.ReleaseDate;
                 if (movie.Poster != null && movie.Poster.Length > 0)
                     tempMovie.Poster = movie.Poster;
@@ -75,6 +76,7 @@ namespace MovieGallery.Services
                     Id = m.Id,
                     Title = m.Title,
                     Director = m.Director,
+                    Cast = m.Cast,
                     ReleaseDate = m.ReleaseDate,
                     Genre = m.Genre,
                     Description = m.Description

@@ -15,6 +15,7 @@ namespace MovieGallery.Services
         {
             movie.Title = movie.Title.ToUpper();
             movie.Director = movie.Director.ToUpper();
+            movie.Cast = movie.Cast.ToUpper();
             return movie;
         }
 

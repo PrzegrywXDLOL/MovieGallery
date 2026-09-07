@@ -28,9 +28,11 @@ namespace MovieGallery.Controllers
                 "History"
             };
         private readonly IMovieService _movieService;
-        public MoviesController(IMovieService movieService)
+        private readonly IReviewService _reviewService;
+        public MoviesController(IMovieService movieService, IReviewService reviewService)
         {
             _movieService = movieService;
+            _reviewService = reviewService;
         }
         public async Task<IActionResult> Index()
         {
@@ -92,9 +94,19 @@ namespace MovieGallery.Controllers
         {
             var movie = await _movieService.Details(id);
             if (movie != null)
-                return View(movie);
+            {
+                var reviews = await _reviewService.GetReviews(id);
 
+                var viewModel = new MovieDetailsViewModel
+                {
+                    Movie = movie,
+                    Reviews = reviews
+                };
+
+                return View(viewModel);
+            }
             return RedirectToAction("Index");
+
         }
 
         [HttpGet]
@@ -115,7 +127,7 @@ namespace MovieGallery.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Movie movie, string[] Genre)
+        public async Task<IActionResult> Edit(Movie movie)
         {
             var file = Request.Form.Files.FirstOrDefault();
 
