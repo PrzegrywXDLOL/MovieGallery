@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MovieGallery.Data;
 using MovieGallery.Models;
 using MovieGallery.Services.Interfaces;
 

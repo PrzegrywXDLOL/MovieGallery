@@ -1,4 +1,6 @@
-﻿@model MovieGallery.Models.MovieDetailsViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model MovieGallery.Models.MovieDetailsViewModel
 @{
     ViewData["Title"] = "Movie Details";
 }
@@ -11,7 +13,10 @@
             <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Movie.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
                                                 border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
         </div>
-        <a class="btn btn-primary btn-lg" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Edit Movie Details</a>
+        @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        { *@
+            <a class="btn btn-primary btn-lg" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Edit Movie Details</a>
+        @* } *@
     </div>
     <div class="col-md-6 justify-content-center">
         <h2 style="justify-self:center;">Movie Details</h2>
@@ -51,7 +56,14 @@
                         <h3>No reviews for this movie</h3>
                     }
                 </div>
-                <a class="btn btn-primary btn-lg" asp-area="" asp-action="Review" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Add Movie Review</a>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a class="btn btn-primary btn-lg" asp-action="Review" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Add Movie Review</a>
+                }
+                else
+                {
+                    <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("Details", "Movies", new { id = Model.Movie.Id })" style="margin-bottom:2.5vh;">Login to add review</a>
+                }
             </div>
         </div>
     </div>
