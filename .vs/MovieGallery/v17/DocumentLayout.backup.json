@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "E:\\Programowanie\\MovieGallery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\movies\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\views\\movies\\review.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\movies\\review.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\services\\moviedbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:services\\moviedbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\services\\reviewdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:services\\reviewdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\models\\moviedetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:models\\moviedetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\moviegallery\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,32 +42,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 799,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Programowanie\\MovieGallery\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-08T17:04:48.233Z",
+              "DocumentIndex": 3,
+              "Title": "Review.cs",
+              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "Models\\Review.cs",
+              "ToolTip": "E:\\Programowanie\\MovieGallery\\Models\\Review.cs",
+              "RelativeToolTip": "Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T19:23:41.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReviewDBService.cs",
+              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Services\\ReviewDBService.cs",
+              "RelativeDocumentMoniker": "Services\\ReviewDBService.cs",
+              "ToolTip": "E:\\Programowanie\\MovieGallery\\Services\\ReviewDBService.cs",
+              "RelativeToolTip": "Services\\ReviewDBService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T17:49:23.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "Services\\ReviewService.cs",
+              "ToolTip": "E:\\Programowanie\\MovieGallery\\Services\\ReviewService.cs",
+              "RelativeToolTip": "Services\\ReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-09T17:49:05.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dark-theme.css",
+              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\wwwroot\\css\\dark-theme.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\dark-theme.css",
+              "ToolTip": "E:\\Programowanie\\MovieGallery\\wwwroot\\css\\dark-theme.css",
+              "RelativeToolTip": "wwwroot\\css\\dark-theme.css",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAALcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-09T17:38:00.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "E:\\Programowanie\\MovieGallery\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
+              "Title": "Review.cshtml",
+              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Views\\Movies\\Review.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\Review.cshtml",
+              "ToolTip": "E:\\Programowanie\\MovieGallery\\Views\\Movies\\Review.cshtml",
+              "RelativeToolTip": "Views\\Movies\\Review.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwCAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-08T16:29:42.584Z",
+              "WhenOpened": "2026-09-09T15:57:52.996Z",
               "EditorCaption": ""
             },
             {
@@ -78,39 +117,14 @@
               "RelativeDocumentMoniker": "Views\\Movies\\Details.cshtml",
               "ToolTip": "E:\\Programowanie\\MovieGallery\\Views\\Movies\\Details.cshtml",
               "RelativeToolTip": "Views\\Movies\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-09-02T17:19:22.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MovieDBService.cs",
-              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Services\\MovieDBService.cs",
-              "RelativeDocumentMoniker": "Services\\MovieDBService.cs",
-              "ToolTip": "E:\\Programowanie\\MovieGallery\\Services\\MovieDBService.cs",
-              "RelativeToolTip": "Services\\MovieDBService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T16:09:33.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MovieDetailViewModel.cs",
-              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Models\\MovieDetailViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\MovieDetailViewModel.cs",
-              "ToolTip": "E:\\Programowanie\\MovieGallery\\Models\\MovieDetailViewModel.cs",
-              "RelativeToolTip": "Models\\MovieDetailViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T16:05:08.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "IReviewService.cs",
               "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Services\\Interfaces\\IReviewService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IReviewService.cs",
@@ -118,31 +132,21 @@
               "RelativeToolTip": "Services\\Interfaces\\IReviewService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T15:45:20.965Z"
+              "WhenOpened": "2026-09-07T15:45:20.965Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dark-theme.css",
-              "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\wwwroot\\css\\dark-theme.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\dark-theme.css",
-              "ToolTip": "E:\\Programowanie\\MovieGallery\\wwwroot\\css\\dark-theme.css",
-              "RelativeToolTip": "wwwroot\\css\\dark-theme.css",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAAAKAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-02T18:10:45.182Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "MoviesController.cs",
               "DocumentMoniker": "E:\\Programowanie\\MovieGallery\\Controllers\\MoviesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
               "ToolTip": "E:\\Programowanie\\MovieGallery\\Controllers\\MoviesController.cs",
               "RelativeToolTip": "Controllers\\MoviesController.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAADwv1sAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAADwv6QAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T09:11:18.773Z"
+              "WhenOpened": "2026-08-29T09:11:18.773Z",
+              "EditorCaption": ""
             }
           ]
         }

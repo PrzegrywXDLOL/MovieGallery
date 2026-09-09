@@ -69,4 +69,48 @@ function clearPosterSelection() {
 }
 function updateCount(el) {
     document.getElementById('charCount').innerText = el.value.length;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating-value');
+    const submitBtn = document.querySelector('input[type="submit"]');
+
+    function updateSubmitButton() {
+        const rating = parseInt(ratingInput.value);
+        submitBtn.disabled = (rating < 1 || rating > 5);
     }
+
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+            const value = parseInt(this.dataset.value);
+            ratingInput.value = value;
+            updateStars(value);
+            updateSubmitButton();
+        });
+
+        star.addEventListener('mouseenter', function () {
+            const value = parseInt(this.dataset.value);
+            updateStars(value);
+        });
+
+        star.addEventListener('mouseleave', function () {
+            const current = parseInt(ratingInput.value) || 0;
+            updateStars(current);
+        });
+    });
+
+    function updateStars(count) {
+        stars.forEach((star, index) => {
+            if (index < count) {
+                star.innerHTML = '&#9733;';
+            } else {
+                star.innerHTML = '&#9734;';
+            }
+        });
+    }
+
+    const initialRating = parseInt(ratingInput.value) || 0;
+    updateStars(initialRating);
+    updateSubmitButton();
+});

@@ -10,7 +10,6 @@ namespace MovieGallery.Services
         {
             _db = db;
         }
-
         public async Task Add(Review review)
         {
             await _db.Add(review);

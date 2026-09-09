@@ -157,5 +157,22 @@ namespace MovieGallery.Controllers
             await _movieService.Update(movie);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Review(int id)
+        {
+            var model = new Review { MovieId = id};
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Review(Review review)
+        {
+            review.ReviewerName = User.Identity.Name.ToString();
+            
+            await _reviewService.Add(review);
+            return RedirectToAction("Details", new { id = review.MovieId });
+        }
     }
 }

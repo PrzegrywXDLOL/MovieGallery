@@ -16,6 +16,7 @@ builder.Services.AddDbContext<MovieGalleryDBContext>(option =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<MovieGalleryDBContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IMovieService, MovieService>();
@@ -43,6 +44,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseStaticFiles();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

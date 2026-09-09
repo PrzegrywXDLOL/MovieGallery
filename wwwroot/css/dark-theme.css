@@ -159,3 +159,26 @@ textarea {
     min-block-size: 24vh;
     max-block-size: 24vh;
 }
+
+.star {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #ffc107;
+    transition: color 0.2s;
+    margin-right: 0.3rem;
+}
+
+.star:hover {
+    color: #ffb300;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+input[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

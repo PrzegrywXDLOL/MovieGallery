@@ -13,10 +13,10 @@
             <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Movie.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
                                                 border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
         </div>
-        @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-        { *@
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
             <a class="btn btn-primary btn-lg" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Edit Movie Details</a>
-        @* } *@
+        }
     </div>
     <div class="col-md-6 justify-content-center">
         <h2 style="justify-self:center;">Movie Details</h2>
