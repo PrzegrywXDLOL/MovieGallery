@@ -1,15 +1,12 @@
-/* Dark theme overrides */
 body.dark-theme {
   background-color: #0b0f14;
   color: #e6eef8;
 }
 
-/* Links */
 body.dark-theme a {
   color: #9ad1ff;
 }
 
-/* Navbar overrides */
 body.dark-theme .navbar {
   background-color: #0d1117 !important;
   border-color: #1f2630 !important;
@@ -20,7 +17,6 @@ body.dark-theme .navbar .nav-link:hover {
   color: #e6eef8 !important;
 }
 
-/* Cards, panels */
 body.dark-theme .card,
 body.dark-theme .bg-white,
 body.dark-theme .border-top,
@@ -30,14 +26,12 @@ body.dark-theme .container {
   border-color: #22272f !important;
 }
 
-/* Footer */
 body.dark-theme .footer,
 body.dark-theme .footer a {
   color: #9fb6d6 !important;
   background-color: transparent !important;
 }
 
-/* Buttons */
 body.dark-theme .btn-outline-secondary {
   color: #e6eef8;
   border-color: #2b333b;
@@ -47,7 +41,6 @@ body.dark-theme .btn-outline-secondary:hover {
   border-color: #3b434a;
 }
 
-/* Tables and forms */
 body.dark-theme table,
 body.dark-theme input,
 body.dark-theme textarea,
@@ -59,7 +52,6 @@ body.dark-theme .btn-primary
   border-color: #2b333b !important;
 }
 
-/* Utility: force text-dark classes to be readable in dark theme */
 body.dark-theme .text-dark {
   color: #e6eef8 !important;
 }
@@ -71,7 +63,6 @@ body.dark-theme .text-dark {
     border: 1px solid white;
     border-radius: 4px;
 }
-
 
 @media (max-width: 767px) {
     .movie-title {
@@ -155,11 +146,6 @@ textarea {
     resize: none;
 }
 
-.review-container {
-    min-block-size: 24vh;
-    max-block-size: 24vh;
-}
-
 .star {
     font-size: 2.5rem;
     cursor: pointer;
@@ -181,4 +167,95 @@ textarea {
 input[type="submit"]:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.carousel-inner-review {
+    min-height: 15.5rem;
+    max-height: 15.5rem;
+}
+
+#reviewCarousel {
+    padding: 0 3rem;
+    overflow: visible;
+}
+
+.carousel-control-review {
+    width: 2.5rem;
+    bottom: 1rem;
+}
+
+.carousel-control-review:hover {
+    opacity: 0.85;
+}
+
+.review-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid #2b333b;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    min-height: 25vh;
+    max-height: 25vh;
+}
+
+.add-review-wrapper {
+    margin-top: 4rem !important;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #9ad1ff;
+    margin-bottom: 0.2rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+    .review-card {
+        min-height: 30.5vh;
+        max-height: 30.5vh;
+    }
+    .carousel-inner-review {
+        min-height: 8.5rem;
+        max-height: 28.5rem;
+    }
+}
+
+.review-rating{
+    margin-top:-2vh;
+    margin-bottom:-1vh;
+}
+
+.review-rating .star-filled {
+    color: #ffc107;
+    font-size: 1.5rem;
+}
+
+.review-rating .star-empty {
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.review-content {
+    margin-top: 0.2rem;
+    color: #c9d6e3;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom:2vh;
+}
+
+@media (max-width: 767px) {
+    .edit-btn {
+        margin-bottom:2vh;
+    }
 }

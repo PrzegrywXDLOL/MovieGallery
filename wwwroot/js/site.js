@@ -3,32 +3,6 @@
 
 // Write your JavaScript code.
 
-(function () {
-
-    const key = 'mv-theme';
-    const toggle = document.getElementById('theme-toggle');
-
-    function apply(theme) {
-        if (theme === 'dark') document.body.classList.add('dark-theme');
-        else document.body.classList.remove('dark-theme');
-        if (toggle) toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
-
-    const stored = localStorage.getItem(key);
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = stored || (prefersDark ? 'dark' : 'light');
-    apply(initial);
-
-    if (toggle) {
-        toggle.addEventListener('click', function () {
-            const nowDark = document.body.classList.contains('dark-theme');
-            const next = nowDark ? 'light' : 'dark';
-            apply(next);
-            localStorage.setItem(key, next);
-        });
-    }
-})();
-
 function previewImage(event) {
     const input = event.target;
     const preview = document.getElementById('previewImage');
@@ -113,4 +87,5 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialRating = parseInt(ratingInput.value) || 0;
     updateStars(initialRating);
     updateSubmitButton();
+
 });

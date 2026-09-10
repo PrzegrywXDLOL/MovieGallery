@@ -9,61 +9,121 @@
 
 <div class="row">
     <div class="col-md-6 d-flex flex-column align-items-center">
-        <div id="posterPreview" style="display: flex; min-width:40.5vh; max-width:40.5vh; max-height:60vh; min-height:60vh; margin-bottom:2.5vh">
+        <div id="posterPreview" style="display: flex; min-width:40.5vh; max-width:40.5vh; max-height:60vh; min-height:60vh; margin-bottom:1.5vh">
             <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Movie.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
                                                 border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
         </div>
+        <h4 class="review-rating" style="margin-top:0.5vh">
+            Avg. Rating:
+            @{
+                int totalReviews = Model.Reviews.Count();
+                int totalRating = Model.Reviews.Sum(r => r.Rating);
+                double averageRating = totalReviews > 0 ? (double)totalRating / totalReviews : 0;
+                averageRating = Math.Round(averageRating, 2);
+            }
+            @averageRating/5 <span class="star-filled">&#9733;</span>
+        </h4>
         @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
         {
-            <a class="btn btn-primary btn-lg" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Edit Movie Details</a>
+            <a class="btn btn-primary btn-lg edit-btn" style="margin-top:3vh" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id">Edit Movie Details</a>
         }
     </div>
     <div class="col-md-6 justify-content-center">
-        <h2 style="justify-self:center;">Movie Details</h2>
+        <h3 style="justify-self:center;">Movie Details</h3>
+        <hr />
         <div class="row">
             <div class="col-md-4">
-                <h4>Director:</h4>
+                <h5>Director:</h5>
                 <p>@Model.Movie.Director</p>
             </div>
             <div class="col-md-4">
-                <h4>Genre:</h4>
+                <h5>Genre:</h5>
                 <p>@Model.Movie.Genre</p>
             </div>
             <div class="col-md-4">
-                <h4>Release Date:</h4>
+                <h5>Release Date:</h5>
                 <p>@Model.Movie.ReleaseDate.ToString("dd-MM-yyyy")</p>
             </div>
             <div class="col-md-12">
-                <h4>Cast:</h4>
+                <h5>Cast:</h5>
                 <p>@Model.Movie.Cast</p>
             </div>
-            <h4>Description:</h4>
-            <p>@Model.Movie.Description</p>
-            <div class="text-center">
-                <h3>Reviews:</h3>
-                <div class="review-container d-flex justify-content-center align-items-center">
-                    @if (@Model.Reviews.Count() > 0)
-                    {
-                        @foreach (var review in Model.Reviews)
-                        {
-                            <p>@review.ReviewerName</p>
-                            <p>@review.Content</p>
-                            <p>@review.Rating</p>
-                        }
-                    }
-                    else
-                    {
-                        <h3>No reviews for this movie</h3>
-                    }
-                </div>
-                @if (SignInManager.IsSignedIn(User))
+            <div class="col-md-12">
+                <h5>Description:</h5>
+                <p>@Model.Movie.Description</p>
+            </div>
+            <hr />
+            <div class="col-md-12 review-container">
+                <h3 class="text-center">Reviews:</h3>
+
+                @if (Model.Reviews.Any())
                 {
-                    <a class="btn btn-primary btn-lg" asp-action="Review" asp-route-id="@Model.Movie.Id" style="margin-bottom:2.5vh;">Add Movie Review</a>
+                    <div id="reviewCarousel" class="carousel slide w-100">
+                        <div class="carousel-inner carousel-inner-review">
+                            @{
+                                int itemsPerSlide = 2;
+                                int totalSlides = (int)Math.Ceiling((double)totalReviews / itemsPerSlide);
+                                var reviewList = Model.Reviews.ToList();
+                            }
+                            @for (int slideIndex = 0; slideIndex < totalSlides; slideIndex++)
+                            {
+                                var slideItems = reviewList.Skip(slideIndex * itemsPerSlide).Take(itemsPerSlide).ToList();
+                                <div class="carousel-item @(slideIndex == 0 ? "active" : "")">
+                                    <div class="row g-3 justify-content-center">
+                                        @foreach (var review in slideItems)
+                                        {
+                                            <div class="col-md-6 col-12">
+                                                <div class="review-card">
+                                                    <h6 class="review-author">@review.ReviewerName</h6>
+                                                    <p class="review-content">@review.Content</p>
+                                                    <div class="review-rating">
+                                                        @for (int i = 1; i <= 5; i++)
+                                                        {
+                                                            if (i <= review.Rating)
+                                                            {
+                                                                <span class="star-filled">&#9733;</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="star-empty">&#9734;</span>
+                                                            }
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        @if (Model.Reviews.Count() > itemsPerSlide)
+                        {
+                            <button class="carousel-control-prev carousel-control-review" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next carousel-control-review" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        }
+                    </div>
                 }
                 else
                 {
-                    <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("Details", "Movies", new { id = Model.Movie.Id })" style="margin-bottom:2.5vh;">Login to add review</a>
+                    <h3 class="d-flex justify-content-center align-items-center" style="min-height: 15rem;">No reviews for this movie</h3>
                 }
+                <div class="text-center">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a class="btn btn-primary btn-lg" asp-action="Review" asp-route-id="@Model.Movie.Id">Add Movie Review</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Login"
+                           asp-route-returnUrl="@Url.Action("Details", "Movies", new { id = Model.Movie.Id })">Login to add review</a>
+                    }
+                </div>
             </div>
         </div>
     </div>
