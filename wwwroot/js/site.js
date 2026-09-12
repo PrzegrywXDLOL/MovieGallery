@@ -42,7 +42,7 @@ function clearPosterSelection() {
     }
 }
 function updateCount(el) {
-    document.getElementById('charCount').innerText = el.value.length;
+    document.getElementById('charCount' ).innerText = el.value.length;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -88,4 +88,143 @@ document.addEventListener('DOMContentLoaded', function () {
     updateStars(initialRating);
     updateSubmitButton();
 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("movieSearch");
+    const carousel = document.getElementById("movieCarousel");
+    const suggestions = document.getElementById("movieSuggestions");
+    const noMoviesMessage = document.getElementById("noMoviesMessage");
+
+    if (!searchInput || !carousel || !suggestions) {
+        return;
+    }
+
+    const carouselInner = carousel.querySelector(".carousel-inner");
+    const originalMovieCards = Array.from(
+        carousel.querySelectorAll(".movie-container")
+    );
+
+    const titles = originalMovieCards
+        .map(function (movieCard) {
+            return movieCard.dataset.title;
+        })
+        .filter(function (title, index, allTitles) {
+            return title && allTitles.indexOf(title) === index;
+        })
+        .sort(function (firstTitle, secondTitle) {
+            return firstTitle.localeCompare(secondTitle, "pl-PL");
+        });
+
+    function renderMovies(movieCards) {
+        carouselInner.innerHTML = "";
+
+        const hasMovies = movieCards.length > 0;
+
+        carousel.style.display = hasMovies ? "" : "none";
+
+        const carouselButtons = carousel.querySelectorAll(".carouselBtn");
+
+        carouselButtons.forEach(function (button) {
+            button.hidden = !hasMovies;
+        });
+
+        if (noMoviesMessage) {
+            noMoviesMessage.style.display = hasMovies ? "none" : "block";
+        }
+
+        const itemsPerSlide = 3;
+
+        for (let index = 0; index < movieCards.length; index += itemsPerSlide) {
+            const carouselItem = document.createElement("div");
+            carouselItem.className = "carousel-item movie-filter-slide";
+
+            if (index === 0) {
+                carouselItem.classList.add("active");
+            }
+
+            const row = document.createElement("div");
+            row.className = "row row-carousel justify-content-center";
+
+            movieCards
+                .slice(index, index + itemsPerSlide)
+                .forEach(function (movieCard, cardIndex) {
+                    movieCard.classList.remove("movie-filter-card");
+                    movieCard.style.animationDelay = `${cardIndex * 0.08}s`;
+
+                    row.appendChild(movieCard);
+
+                    void movieCard.offsetWidth;
+
+                    movieCard.classList.add("movie-filter-card");
+                });
+
+            carouselItem.appendChild(row);
+            carouselInner.appendChild(carouselItem);
+        }
+    }
+
+    function filterMovies(value) {
+        const query = value.trim().toLocaleLowerCase("pl-PL");
+
+        if (!query) {
+            renderMovies(originalMovieCards);
+            return;
+        }
+
+        const matchingCards = originalMovieCards.filter(function (movieCard) {
+            const title = movieCard.dataset.title.toLocaleLowerCase("pl-PL");
+
+            return title.includes(query);
+        });
+
+        renderMovies(matchingCards);
+    }
+
+    function showSuggestions(value) {
+        const query = value.trim().toLocaleLowerCase("pl-PL");
+
+        suggestions.innerHTML = "";
+
+        if (!query) {
+            suggestions.classList.remove("visible");
+            return;
+        }
+
+        const matchingTitles = titles.filter(function (title) {
+            return title.toLocaleLowerCase("pl-PL").includes(query);
+        });
+
+        matchingTitles.forEach(function (title) {
+            const suggestion = document.createElement("button");
+
+            suggestion.type = "button";
+            suggestion.className = "movie-suggestion";
+            suggestion.textContent = title;
+
+            suggestion.addEventListener("click", function () {
+                searchInput.value = title;
+                filterMovies(title);
+                suggestions.classList.remove("visible");
+            });
+
+            suggestions.appendChild(suggestion);
+        });
+
+        suggestions.classList.toggle(
+            "visible",
+            matchingTitles.length > 0
+        );
+    }
+
+    searchInput.addEventListener("input", function () {
+        filterMovies(searchInput.value);
+        showSuggestions(searchInput.value);
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".search-wrapper")) {
+            suggestions.classList.remove("visible");
+        }
+    });
 });

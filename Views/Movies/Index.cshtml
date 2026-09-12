@@ -1,27 +1,49 @@
 ﻿@model IEnumerable<MovieGallery.Models.Movie>
+
 @{
     ViewData["Title"] = "Home Page";
+    var movies = Model.ToList();
 }
 
-<div class="container my-5 d-flex align-items-center justify-content-center" style="min-height: 70vh;">
-    @if (Model.Count()>0)
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6 search-wrapper">
+            <input id="movieSearch"
+                   type="search"
+                   class="form-control search-bar"
+                   placeholder="Search..."
+                   autocomplete="off" />
+
+            <div id="movieSuggestions" class="movie-suggestions"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5 d-flex flex-column align-items-center justify-content-center"
+     style="min-height: 70vh; margin-top:0 !important;">
+    @if (movies.Count > 0)
     {
         <div id="movieCarousel" class="carousel slide w-100">
             <div class="carousel-inner">
                 @{
-                    int totalItems = Model.Count();
+                    int totalItems = movies.Count;
                     int itemsPerSlide = 3;
                     int totalSlides = (int)Math.Ceiling((double)totalItems / itemsPerSlide);
-                    var moviesList = Model.ToList();
                 }
+
                 @for (int slideIndex = 0; slideIndex < totalSlides; slideIndex++)
                 {
-                    var slideItems = moviesList.Skip(slideIndex * itemsPerSlide).Take(itemsPerSlide).ToList();
+                    var slideItems = movies
+                        .Skip(slideIndex * itemsPerSlide)
+                        .Take(itemsPerSlide)
+                        .ToList();
+
                     <div class="carousel-item @(slideIndex == 0 ? "active" : "")">
                         <div class="row row-carousel justify-content-center">
                             @foreach (var item in slideItems)
                             {
-                                <div class="col-6 col-md-3 col-sm-3 movie-container">
+                                <div class="col-6 col-md-3 col-sm-3 movie-container"
+                                     data-title="@item.Title">
                                     <div class="movie-card">
                                         <a asp-action="Details" asp-route-id="@item.Id">
                                             <img src="@Url.Action("GetPoster", "Movies", new { id = item.Id })"
@@ -29,8 +51,11 @@
                                                  alt="Poster: @item.Title" />
                                         </a>
                                     </div>
+
                                     <div class="mt-2">
-                                        <h5 class="movie-title" style="font-weight:bold;">@item.Title</h5>
+                                        <h5 class="movie-title" style="font-weight: bold;">
+                                            @item.Title
+                                        </h5>
                                     </div>
                                 </div>
                             }
@@ -38,20 +63,30 @@
                     </div>
                 }
             </div>
+
+            @if (movies.Count > itemsPerSlide)
+            {
+                <button class="carousel-control-prev carousel-control carouselBtn"
+                        type="button"
+                        data-bs-target="#movieCarousel"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next carousel-control carouselBtn"
+                        type="button"
+                        data-bs-target="#movieCarousel"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            }
         </div>
-        @if (Model.Count() > itemsPerSlide)
-        {
-            <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next carousel-control" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        }
     }
-    else{
-        <h1>No Movies in Database</h1>
-    } 
+    <h1 id="noMoviesMessage"
+        class="text-center w-100"
+        style="display: @(movies.Count > 0 ? "none" : "block");">
+        No movies found in database
+    </h1>
 </div>

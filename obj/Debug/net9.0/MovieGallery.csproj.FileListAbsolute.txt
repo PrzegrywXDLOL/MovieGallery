@@ -413,5 +413,5 @@ E:\Programowanie\MovieGallery\obj\Debug\net9.0\refint\MovieGallery.dll
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.pdb
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\MovieGallery.genruntimeconfig.cache
 E:\Programowanie\MovieGallery\obj\Debug\net9.0\ref\MovieGallery.dll
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\gimhycsfp2-3q3d4zpxre.gz
-E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\86g38uwcqb-p24kgusksf.gz
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\86g38uwcqb-u0nwnkfkf6.gz
+E:\Programowanie\MovieGallery\obj\Debug\net9.0\compressed\gimhycsfp2-pyb9z5r92f.gz

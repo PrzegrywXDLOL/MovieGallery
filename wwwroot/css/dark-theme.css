@@ -108,14 +108,14 @@ footer {
 }
 
 .carousel-control {
-    top: 25vh;
-    bottom: 35vh;
+    top: 2rem;
+    bottom: 5rem;
 }
 
 @media (max-width: 767px) {
     .carousel-control {
-        top: 25vh;
-        bottom: 25vh;
+        top: 2rem;
+        bottom: 5rem;
     }
 }
 
@@ -257,5 +257,103 @@ input[type="submit"]:disabled {
 @media (max-width: 767px) {
     .edit-btn {
         margin-bottom:2vh;
+    }
+}
+
+.search-bar::placeholder {
+    color: #c9d1d9;
+    opacity: 1;
+}
+
+.search-wrapper {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+}
+
+@media (max-width: 767px) {
+    .search-wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+body.dark-theme .movie-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0.75rem;
+    right: 0.75rem;
+    z-index: 1050;
+    display: none;
+    max-height: 16rem;
+    overflow-y: auto;
+    margin-top: -0.1rem;
+    padding: 0;
+    background-color: #0f1418;
+    border: 1px solid #2b333b;
+    border-top: 0;
+    border-radius: 0 0 0.375rem 0.375rem;
+}
+
+body.dark-theme .movie-suggestions.visible {
+    display: block;
+}
+
+body.dark-theme .search-bar:focus {
+    border-radius: 0.375rem 0.375rem 0 0;
+    box-shadow: none;
+}
+
+body.dark-theme .search-wrapper:has(.movie-suggestions.visible) .search-bar {
+    border-radius: 0.375rem 0.375rem 0 0;
+}
+
+body.dark-theme .movie-suggestions.visible {
+    border-radius: 0 0 0.375rem 0.375rem;
+    margin-top:0.05rem;
+}
+
+body.dark-theme .movie-suggestion {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    color: #c9d6e3;
+    background-color: #0f1418;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+body.dark-theme .movie-suggestion:hover,
+body.dark-theme .movie-suggestion:focus {
+    color: #ffffff;
+    background-color: #1c2733;
+    outline: none;
+}
+
+body.dark-theme .movie-suggestion + .movie-suggestion {
+    border-top: 1px solid #222c36;
+}
+
+.movie-filter-card {
+    animation: movie-card-in 0.45s ease-out both;
+    will-change: opacity, transform;
+}
+
+@keyframes movie-card-in {
+    from {
+        opacity: 0;
+        transform: translateX(-2rem) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .movie-filter-card {
+        animation: none;
     }
 }

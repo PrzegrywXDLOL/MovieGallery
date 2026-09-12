@@ -1,7 +1,6 @@
 wwwroot\favicon.ico
 wwwroot\Img\banner.png
 wwwroot\Img\Placeholder.jpg
-wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -63,8 +62,8 @@ wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\css\dark-theme.css
+wwwroot\js\site.js
 E:\Programowanie\MovieGallery\wwwroot\favicon.ico
-E:\Programowanie\MovieGallery\wwwroot\js\site.js
 E:\Programowanie\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 E:\Programowanie\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 E:\Programowanie\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -125,3 +124,4 @@ E:\Programowanie\MovieGallery\wwwroot\lib\jquery\dist\jquery.slim.min.js
 E:\Programowanie\MovieGallery\wwwroot\lib\jquery\dist\jquery.slim.min.map
 E:\Programowanie\MovieGallery\wwwroot\lib\jquery\LICENSE.txt
 E:\Programowanie\MovieGallery\wwwroot\css\dark-theme.css
+E:\Programowanie\MovieGallery\wwwroot\js\site.js
