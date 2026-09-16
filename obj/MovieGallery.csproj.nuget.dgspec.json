@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programowanie\\MovieGallery\\MovieGallery.csproj": {}
+    "E:\\Programowanie\\C#\\MovieGallery\\MovieGallery.csproj": {}
   },
   "projects": {
-    "E:\\Programowanie\\MovieGallery\\MovieGallery.csproj": {
+    "E:\\Programowanie\\C#\\MovieGallery\\MovieGallery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programowanie\\MovieGallery\\MovieGallery.csproj",
+        "projectUniqueName": "E:\\Programowanie\\C#\\MovieGallery\\MovieGallery.csproj",
         "projectName": "MovieGallery",
-        "projectPath": "E:\\Programowanie\\MovieGallery\\MovieGallery.csproj",
+        "projectPath": "E:\\Programowanie\\C#\\MovieGallery\\MovieGallery.csproj",
         "packagesPath": "C:\\Users\\dawid\\.nuget\\packages\\",
-        "outputPath": "E:\\Programowanie\\MovieGallery\\obj\\",
+        "outputPath": "E:\\Programowanie\\C#\\MovieGallery\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Visual Studio Shared\\NuGetPackages"
@@ -51,6 +51,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Google_GenerativeAI.Microsoft": {
+              "target": "Package",
+              "version": "[3.6.7, )"
+            },
+            "Microsoft.Agents.AI": {
+              "target": "Package",
+              "version": "[1.21.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.19, )"

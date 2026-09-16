@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MovieGallery.Models
 {
@@ -13,8 +14,10 @@ namespace MovieGallery.Models
         public byte[]? Poster { get; set; }
         public string Genre { get; set; }
         public string Description { get; set; }
-        
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+
         [NotMapped]
+        [JsonIgnore]
         public List<string> SelectedGenres { get; set; } = new List<string>();
     }
 }

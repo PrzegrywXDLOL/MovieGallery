@@ -44,7 +44,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2026 - MovieGallery - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -55,5 +54,48 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    <div id="aiChat" class="ai-chat">
+        <button id="aiChatToggle"
+                class="ai-chat-toggle"
+                type="button"
+                aria-label="Open AI Assistant Chat">
+            <span aria-hidden="true">✦</span>
+        </button>
+
+        <section id="aiChatWindow"
+                 class="ai-chat-window"
+                 aria-label="AI Assistant Chat"
+                 hidden>
+            <div class="ai-chat-header">
+                <strong>AI Assistant</strong>
+                <button id="aiChatClose"
+                        class="ai-chat-close"
+                        type="button"
+                        aria-label="Close chat">
+                    &times;
+                </button>
+            </div>
+
+            <div id="aiChatMessages" class="ai-chat-messages">
+                <div class="ai-chat-message ai-chat-message-bot">
+                    Hi! How can I help you?
+                </div>
+            </div>
+
+            <form id="aiChatForm" class="ai-chat-form">
+                <input id="aiChatInput"
+                       class="ai-chat-input"
+                       type="text"
+                       placeholder="Write a message..."
+                       autocomplete="off"
+                       required />
+
+                <button class="ai-chat-send" type="submit">
+                    Send
+                </button>
+            </form>
+        </section>
+    </div>
 </body>
 </html>

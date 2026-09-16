@@ -228,3 +228,75 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("aiChatToggle");
+    const close = document.getElementById("aiChatClose");
+    const windowElement = document.getElementById("aiChatWindow");
+    const form = document.getElementById("aiChatForm");
+    const input = document.getElementById("aiChatInput");
+    const messages = document.getElementById("aiChatMessages");
+
+    if (!toggle || !close || !windowElement || !form || !input || !messages) {
+        return;
+    }
+
+    function addMessage(text, type) {
+        const message = document.createElement("div");
+
+        message.className = `ai-chat-message ai-chat-message-${type}`;
+        message.textContent = text;
+
+        messages.appendChild(message);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    toggle.addEventListener("click", function () {
+        windowElement.hidden = !windowElement.hidden;
+
+        if (!windowElement.hidden) {
+            input.focus();
+        }
+    });
+
+    close.addEventListener("click", function () {
+        windowElement.hidden = true;
+    });
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const message = input.value.trim();
+
+        if (!message) {
+            return;
+        }
+
+        addMessage(message, "user");
+        input.value = "";
+
+        try {
+            const response = await fetch('@Url.Action("AskAsync", "Movies")', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: message
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Server response error.");
+            }
+
+            const data = await response.json();
+            addMessage(data.reply, "bot");
+        } catch {
+            addMessage(
+                "Failed to connect to the AI assistant.",
+                "bot"
+            );
+        }
+    });
+});

@@ -1,0 +1,5 @@
+﻿@MovieGallery_HostAddress = https://localhost:7137
+
+GET {{MovieGallery_HostAddress}}/api/Movies
+
+###
