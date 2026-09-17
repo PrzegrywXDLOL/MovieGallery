@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieGallery.Models;
 using MovieGallery.Services.Interfaces;
+using MovieGallery.Agents;
 
 namespace MovieGallery.Controllers
 {
@@ -29,10 +30,12 @@ namespace MovieGallery.Controllers
             };
         private readonly IMovieService _movieService;
         private readonly IReviewService _reviewService;
-        public MoviesController(IMovieService movieService, IReviewService reviewService)
+        private readonly MovieGalleryHelper _chatClient;
+        public MoviesController(IMovieService movieService, IReviewService reviewService, MovieGalleryHelper chatClient)
         {
             _movieService = movieService;
             _reviewService = reviewService;
+            _chatClient = chatClient;
         }
         public async Task<IActionResult> Index()
         {
@@ -174,5 +177,17 @@ namespace MovieGallery.Controllers
             await _reviewService.Add(review);
             return RedirectToAction("Details", new { id = review.MovieId });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AskHelper([FromBody] ChatRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Query))
+                return BadRequest(new { error = "You can't send empty message" });
+
+            var answer = await _chatClient.AskAsync(request.Query);
+
+            return Json(new { answer });
+        }
+        public record ChatRequest(string Query);
     }
 }

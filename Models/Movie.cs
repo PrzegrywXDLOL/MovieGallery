@@ -11,6 +11,7 @@ namespace MovieGallery.Models
         public string Director { get; set; }
         public string Cast { get; set; }
         public DateOnly ReleaseDate { get; set; }
+        [JsonIgnore]
         public byte[]? Poster { get; set; }
         public string Genre { get; set; }
         public string Description { get; set; }

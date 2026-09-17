@@ -241,7 +241,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    function addMessage(text, type) {
+    const chatStorageKey = "movieGalleryAiChatMessages";
+
+    function addMessage(text, type, save = true) {
         const message = document.createElement("div");
 
         message.className = `ai-chat-message ai-chat-message-${type}`;
@@ -249,6 +251,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
         messages.appendChild(message);
         messages.scrollTop = messages.scrollHeight;
+
+        if (save) {
+            saveMessages();
+        }
+    }
+
+    function saveMessages() {
+        const chatMessages = Array.from(
+            messages.querySelectorAll(".ai-chat-message")
+        ).map(function (message) {
+            return {
+                text: message.textContent,
+                type: message.classList.contains("ai-chat-message-user")
+                    ? "user"
+                    : "bot"
+            };
+        });
+
+        try {
+            sessionStorage.setItem(
+                chatStorageKey,
+                JSON.stringify(chatMessages)
+            );
+        } catch (error) {
+            console.error("Nie udało się zapisać historii czatu:", error);
+        }
+    }
+
+    function loadMessages() {
+        let savedMessages;
+
+        try {
+            savedMessages = sessionStorage.getItem(chatStorageKey);
+        } catch (error) {
+            console.error("Nie udało się odczytać historii czatu:", error);
+            return;
+        }
+
+        if (!savedMessages) {
+            return;
+        }
+
+        try {
+            const chatMessages = JSON.parse(savedMessages);
+
+            if (!Array.isArray(chatMessages) || chatMessages.length === 0) {
+                return;
+            }
+
+            messages.innerHTML = "";
+
+            chatMessages.forEach(function (chatMessage) {
+                addMessage(chatMessage.text, chatMessage.type, false);
+            });
+
+            messages.scrollTop = messages.scrollHeight;
+        } catch (error) {
+            console.error("Historia czatu ma nieprawidłowy format:", error);
+            sessionStorage.removeItem(chatStorageKey);
+        }
     }
 
     toggle.addEventListener("click", function () {
@@ -256,6 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!windowElement.hidden) {
             input.focus();
+            loadMessages();
         }
     });
 
@@ -276,14 +339,10 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = "";
 
         try {
-            const response = await fetch('@Url.Action("AskAsync", "Movies")', {
+            const response = await fetch("/Movies/AskHelper", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    message: message
-                })
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query: message })
             });
 
             if (!response.ok) {
@@ -291,7 +350,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             const data = await response.json();
-            addMessage(data.reply, "bot");
+            addMessage(data.answer, "bot");
+
         } catch {
             addMessage(
                 "Failed to connect to the AI assistant.",

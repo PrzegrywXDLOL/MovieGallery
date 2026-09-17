@@ -21,15 +21,24 @@ namespace MovieGallery.Agents
             {
                 new ChatMessage(ChatRole.System, $"""
                 You are a helpful assistant in a Movie Gallery that provides information about movies.
-                Be friendly, informative, and concise in your responses. 
+                Be friendly, informative, and concise in your responses. Your response should be short and to the point, 
+                providing only the necessary information. Don't use "**" or any other formatting in your responses.
+                Try to make a feeling of excitement and enthusiasm in your responses and make the user feel like they are talking to a movie expert not a robot.
                 Use the following movie data to answer questions (JSON): {moviesData}
                 """),
                 new ChatMessage(ChatRole.User, query)
             };
 
-            var response = await _chatClient.GetResponseAsync(messages);
-            return response.Text;
-        }
+            try
+            {
+                var response = await _chatClient.GetResponseAsync(messages);
+                return response.Text;
+            
+            }catch (Exception){
+                return "Sorry, I couldn't process your request at the moment. Please try again later.";
+            }
+
+}
 
         private async Task<string> GetMoviesDataFromApiAsync()
         {
