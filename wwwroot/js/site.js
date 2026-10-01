@@ -1,8 +1,4 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
+﻿// Image preview functionality
 function previewImage(event) {
     const input = event.target;
     const preview = document.getElementById('previewImage');
@@ -17,6 +13,8 @@ function previewImage(event) {
         preview.src = '/Img/Placeholder.jpg';
     }
 }
+
+// Clear poster selection functionality
 function clearPosterSelection() {
     const input = document.getElementById('PosterFileInput');
     const preview = document.getElementById('previewImage');
@@ -41,10 +39,13 @@ function clearPosterSelection() {
         preview.src = '/Img/Placeholder.jpg';
     }
 }
+
+// Character count functionality
 function updateCount(el) {
     document.getElementById('charCount' ).innerText = el.value.length;
 }
 
+// Star rating functionality
 document.addEventListener('DOMContentLoaded', function () {
     const stars = document.querySelectorAll('.star');
     const ratingInput = document.getElementById('rating-value');
@@ -90,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// Movie search functionality
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("movieSearch");
     const carousel = document.getElementById("movieCarousel");
@@ -119,21 +121,23 @@ document.addEventListener("DOMContentLoaded", function () {
     function renderMovies(movieCards) {
         carouselInner.innerHTML = "";
 
+        const itemsPerSlide = 3;
         const hasMovies = movieCards.length > 0;
-
-        carousel.style.display = hasMovies ? "" : "none";
-
         const carouselButtons = carousel.querySelectorAll(".carouselBtn");
 
-        carouselButtons.forEach(function (button) {
-            button.hidden = !hasMovies;
-        });
+        function updateCarouselButtons(movieCount) {
+            carouselButtons.forEach(function (button) {
+                button.hidden = movieCount <= itemsPerSlide;
+            });
+        }
+
+        updateCarouselButtons(movieCards.length);
+
+        carousel.style.display = hasMovies ? "" : "none";
 
         if (noMoviesMessage) {
             noMoviesMessage.style.display = hasMovies ? "none" : "block";
         }
-
-        const itemsPerSlide = 3;
 
         for (let index = 0; index < movieCards.length; index += itemsPerSlide) {
             const carouselItem = document.createElement("div");
@@ -229,6 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// AI Chat functionality
 document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.getElementById("aiChatToggle");
     const close = document.getElementById("aiChatClose");
@@ -359,4 +364,47 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         }
     });
+});
+
+// Admin user search functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("adminUserSearch");
+    const table = document.querySelector(".admin-users-table");
+    const noResultsRow = document.getElementById("adminNoResults");
+
+    if (!searchInput || !table || !noResultsRow) {
+        return;
+    }
+
+    const userRows = Array.from(
+        table.querySelectorAll("tbody tr[data-user-row]")
+    );
+
+    function filterUsers() {
+        const query = searchInput.value.trim().toLocaleLowerCase("pl-PL");
+        let visibleCount = 0;
+
+        userRows.forEach(function (row) {
+            const searchableText = [
+                row.dataset.userName,
+                row.dataset.userEmail,
+                row.dataset.userRole
+            ]
+                .filter(Boolean)
+                .join(" ")
+                .toLocaleLowerCase("pl-PL");
+
+            const matches = searchableText.includes(query);
+            row.hidden = !matches;
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        noResultsRow.hidden = visibleCount > 0;
+    }
+
+    searchInput.addEventListener("input", filterUsers);
+    filterUsers();
 });

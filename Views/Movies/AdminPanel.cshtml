@@ -1,0 +1,102 @@
+﻿@model IEnumerable<MovieGallery.Models.UserData>
+
+@{
+    ViewData["Title"] = "Admin Panel";
+    const string adminRoleId = "77393FA6-937E-41EE-BEBB-63C8C792E622";
+    var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    var adminCount = Model.Count(user => user.RoleId == adminRoleId);
+}
+
+<section class="admin-panel">
+    <header class="admin-panel-heading">
+        <div>
+            <span class="admin-panel-eyebrow">Movie Gallery</span>
+            <h1>User Management</h1>
+            <p>Website users and their assigned roles.</p>
+        </div>
+    </header>
+
+    @if (TempData["AdminMessage"] is string message)
+    {
+        <p class="admin-alert admin-alert-success" role="status">@message</p>
+    }
+
+    <div class="admin-toolbar">
+        <div class="admin-panel-stats">
+            <span class="admin-user-count">@Model.Count() Accounts</span>
+            <span class="admin-user-count admin-privileged-count">@adminCount Admins</span>
+        </div>
+
+        <div class="admin-search">
+            <label class="visually-hidden" for="adminUserSearch">Search users</label>
+            <input id="adminUserSearch"
+                   class="admin-user-search"
+                   type="search"
+                   placeholder="Search by username, email or role..."
+                   autocomplete="off" />
+        </div>
+    </div>
+
+    <div class="admin-table-wrapper">
+        <table class="admin-users-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Email address</th>
+                    <th>Current role</th>
+                    <th>Change role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr data-user-row
+                        data-user-name="@user.UserName"
+                        data-user-email="@user.Email"
+                        data-user-role="@(user.RoleId == adminRoleId ? "Admin" : "User")">
+                        <td class="admin-username">@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>
+                            <span class="admin-role-badge @(user.RoleId == adminRoleId ? "admin-role-badge-admin" : "")">
+                                @(user.RoleId == adminRoleId ? "Admin" : "User")
+                            </span>
+                        </td>
+                        <td>
+                            @if (user.Id == currentUserId)
+                            {
+                                <span class="admin-role-badge">Current account — role locked</span>
+                            }
+                            else
+                            {
+                                <form asp-controller="Movies"
+                                      asp-action="UpdateRole"
+                                      method="post"
+                                      class="admin-role-form">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="Id" value="@user.Id" />
+
+                                    <select name="RoleId" class="admin-role-select" aria-label="Select role">
+                                        <option value=""
+                                                selected="@(string.IsNullOrEmpty(user.RoleId))">
+                                            User
+                                        </option>
+                                        <option value="@adminRoleId"
+                                                selected="@(user.RoleId == adminRoleId)">
+                                            Admin
+                                        </option>
+                                    </select>
+
+                                    <button class="admin-save-button" type="submit">Save</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+
+                <tr id="adminNoResults" hidden>
+                    <td colspan="4" class="admin-no-results">No users match your search.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

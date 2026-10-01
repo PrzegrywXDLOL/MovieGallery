@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "E:\\Programowanie\\C#\\MovieGallery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\views\\movies\\adminpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\movies\\adminpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\agents\\moviegalleryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:agents\\moviegalleryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AdminPanel.cshtml",
+              "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Movies\\AdminPanel.cshtml",
+              "RelativeDocumentMoniker": "Views\\Movies\\AdminPanel.cshtml",
+              "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Movies\\AdminPanel.cshtml",
+              "RelativeToolTip": "Views\\Movies\\AdminPanel.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-01T10:06:29.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "site.js",
               "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
               "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\js\\site.js",
               "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAowF4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkBAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-09-17T11:31:15.242Z",
               "EditorCaption": ""
@@ -53,48 +58,9 @@
               "RelativeDocumentMoniker": "wwwroot\\css\\dark-theme.css",
               "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\css\\dark-theme.css",
               "RelativeToolTip": "wwwroot\\css\\dark-theme.css",
-              "ViewState": "AgIAAJUBAAAAAAAAAAAjwKoBAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAGsCAAAAAAAAAAAvwIECAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-09-17T11:24:10.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEYAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-17T11:17:24.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MovieGalleryHelper.cs",
-              "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\Agents\\MovieGalleryHelper.cs",
-              "RelativeDocumentMoniker": "Agents\\MovieGalleryHelper.cs",
-              "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\Agents\\MovieGalleryHelper.cs",
-              "RelativeToolTip": "Agents\\MovieGalleryHelper.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA5wBwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T18:59:48.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MoviesController.cs",
-              "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\Controllers\\MoviesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
-              "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\Controllers\\MoviesController.cs",
-              "RelativeToolTip": "Controllers\\MoviesController.cs",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAzwLwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T09:11:18.773Z",
               "EditorCaption": ""
             }
           ]

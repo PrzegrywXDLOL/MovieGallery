@@ -184,12 +184,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Programowanie/C\#/MovieGallery/Pages/Movies/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/Programowanie/C\#/MovieGallery/Views/Movies/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Programowanie/C\#/MovieGallery/Views/Movies/AdminPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEFkbWluUGFuZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Programowanie/C\#/MovieGallery/Views/Movies/Details.cshtml]

@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using MovieGallery.Agents;
 using MovieGallery.Models;
 using MovieGallery.Services.Interfaces;
-using MovieGallery.Agents;
 
 namespace MovieGallery.Controllers
 {
@@ -30,11 +31,13 @@ namespace MovieGallery.Controllers
             };
         private readonly IMovieService _movieService;
         private readonly IReviewService _reviewService;
+        private readonly IUserService _userService;
         private readonly MovieGalleryHelper _chatClient;
-        public MoviesController(IMovieService movieService, IReviewService reviewService, MovieGalleryHelper chatClient)
+        public MoviesController(IMovieService movieService, IReviewService reviewService, IUserService userService, MovieGalleryHelper chatClient)
         {
             _movieService = movieService;
             _reviewService = reviewService;
+            _userService = userService;
             _chatClient = chatClient;
         }
         public async Task<IActionResult> Index()
@@ -51,6 +54,7 @@ namespace MovieGallery.Controllers
             return File(poster, "image/jpeg");
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
         {
@@ -59,7 +63,8 @@ namespace MovieGallery.Controllers
 
             return View();
         }
-        
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(Movie movie, string[] Genre)
@@ -112,6 +117,7 @@ namespace MovieGallery.Controllers
 
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -128,6 +134,7 @@ namespace MovieGallery.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Movie movie)
@@ -188,6 +195,28 @@ namespace MovieGallery.Controllers
 
             return Json(new { answer });
         }
+
         public record ChatRequest(string Query);
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> AdminPanel()
+        {
+            return View(await _userService.GetAll());
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateRole(UserData userData)
+        {
+            var currentUserId = User.FindFirst(
+                System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (userData.Id == currentUserId) return RedirectToAction(nameof(AdminPanel));
+
+            await _userService.UpdateRole(userData);
+            return RedirectToAction(nameof(AdminPanel));
+        }
     }
 }
