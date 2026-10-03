@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\movies\\adminpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\css\\dark-theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,14 +32,14 @@
               "RelativeDocumentMoniker": "Views\\Movies\\AdminPanel.cshtml",
               "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Movies\\AdminPanel.cshtml",
               "RelativeToolTip": "Views\\Movies\\AdminPanel.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-10-01T10:06:29.539Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "site.js",
               "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
@@ -52,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "dark-theme.css",
               "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\css\\dark-theme.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\dark-theme.css",
@@ -60,8 +60,7 @@
               "RelativeToolTip": "wwwroot\\css\\dark-theme.css",
               "ViewState": "AgIAAIICAAAAAAAAAAAvwIsCAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-17T11:24:10.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-17T11:24:10.75Z"
             }
           ]
         }

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieGallery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0ecfc627370fee5d07f7b52485753c9e041da99")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e7c8af5168de2d423baf40e314c73b6e87fad75")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieGallery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieGallery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

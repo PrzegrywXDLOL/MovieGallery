@@ -1,3 +1,4 @@
+wwwroot\css\dark-theme.css
 wwwroot\favicon.ico
 wwwroot\Img\banner.png
 wwwroot\Img\Placeholder.jpg
@@ -62,7 +63,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\dark-theme.css
+E:\Programowanie\C#\MovieGallery\wwwroot\css\dark-theme.css
 E:\Programowanie\C#\MovieGallery\wwwroot\favicon.ico
 E:\Programowanie\C#\MovieGallery\wwwroot\js\site.js
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -72,7 +73,7 @@ E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.m
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.css
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
@@ -88,14 +89,6 @@ E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-utilit
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
@@ -124,4 +117,11 @@ E:\Programowanie\C#\MovieGallery\wwwroot\lib\jquery\dist\jquery.slim.js
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\jquery\dist\jquery.slim.min.js
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\jquery\dist\jquery.slim.min.map
 E:\Programowanie\C#\MovieGallery\wwwroot\lib\jquery\LICENSE.txt
-E:\Programowanie\C#\MovieGallery\wwwroot\css\dark-theme.css
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+E:\Programowanie\C#\MovieGallery\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

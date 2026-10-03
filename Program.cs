@@ -1,12 +1,13 @@
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using GenerativeAI.Microsoft;
-using Microsoft.Extensions.AI;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.AI;
+using MovieGallery.Agents;
 using MovieGallery.Data;
 using MovieGallery.Services;
 using MovieGallery.Services.Interfaces;
-using MovieGallery.Agents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,9 +23,18 @@ var model = "gemini-3.8-flash"; //gemini-3.8-flash or gemini-3.6-flash
 builder.Services.AddChatClient(sp =>
     new GenerativeAIChatClient(apiKey, model));
 
-builder.Services.AddHttpClient("MoviesApi", client =>
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddHttpClient("MoviesApi", (sp, client) =>
 {
-    client.BaseAddress = new Uri("https://localhost:7137");
+    var httpRequest = sp.GetRequiredService<IHttpContextAccessor>()
+                        .HttpContext!
+                        .Request;
+
+    client.BaseAddress = new Uri(UriHelper.BuildAbsolute(
+        httpRequest.Scheme,
+        httpRequest.Host,
+        httpRequest.PathBase));
 });
 
 builder.Services.AddScoped<MovieGalleryHelper>();
