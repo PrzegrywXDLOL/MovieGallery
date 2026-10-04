@@ -3,6 +3,8 @@
 @model MovieGallery.Models.MovieDetailsViewModel
 @{
     ViewData["Title"] = "Movie Details";
+    var reviewList = Model.Reviews.ToList();
+    var totalReviews = reviewList.Count;
 }
 <h1 style="justify-self:center; text-align:center;">@Model.Movie.Title</h1>
 <hr />
@@ -13,11 +15,10 @@
             <img src="@Url.Action("GetPoster", "Movies", new { id = @Model.Movie.Id })" alt="Poster" class="img-fluid" style="object-fit: fill; width:100%;
                                                 border: 1px solid white; border-radius: 4px; aspect-ratio: 27 / 40;" />
         </div>
-        <h4 class="review-rating" style="margin-top:0.5vh">
+        <h4 class="review-rating" style="margin-top:0.5vh; margin-bottom:2vh">
             Avg. Rating:
             @{
-                int totalReviews = Model.Reviews.Count();
-                int totalRating = Model.Reviews.Sum(r => r.Rating);
+                int totalRating = reviewList.Sum(r => r.Rating);
                 double averageRating = totalReviews > 0 ? (double)totalRating / totalReviews : 0;
                 averageRating = Math.Round(averageRating, 2);
             }
@@ -25,7 +26,7 @@
         </h4>
         @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
         {
-            <a class="btn btn-primary btn-lg edit-btn" style="margin-top:3vh" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id">Edit Movie Details</a>
+            <a class="btn btn-primary btn-lg edit-btn" asp-area="" asp-action="Edit" asp-route-id="@Model.Movie.Id">Edit Movie Details</a>
         }
     </div>
     <div class="col-md-6 justify-content-center">
@@ -58,12 +59,12 @@
 
                 @if (Model.Reviews.Any())
                 {
-                    <div id="reviewCarousel" class="carousel slide w-100">
+                    // Desktop Carousel
+                    <div id="reviewCarouselDesktop" class="carousel slide w-100 d-none d-md-block">
                         <div class="carousel-inner carousel-inner-review">
                             @{
                                 int itemsPerSlide = 2;
-                                int totalSlides = (int)Math.Ceiling((double)totalReviews / itemsPerSlide);
-                                var reviewList = Model.Reviews.ToList();
+                                int totalSlides = (int)Math.Ceiling((double)reviewList.Count / itemsPerSlide);
                             }
                             @for (int slideIndex = 0; slideIndex < totalSlides; slideIndex++)
                             {
@@ -98,11 +99,61 @@
                         </div>
                         @if (Model.Reviews.Count() > itemsPerSlide)
                         {
-                            <button class="carousel-control-prev carousel-control-review" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                            <button class="carousel-control-prev carousel-control-review" type="button" data-bs-target="#reviewCarouselDesktop" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next carousel-control-review" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                            <button class="carousel-control-next carousel-control-review" type="button" data-bs-target="#reviewCarouselDesktop" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        }
+                    </div>
+
+                    // Mobile Carousel
+                    <div id="reviewCarouselMobile" class="carousel slide w-100 d-md-none">
+                        <div class="carousel-inner carousel-inner-review">
+                            @{
+                                int totalSlidesMobile = reviewList.Count();
+                            }
+                            @for (int slideIndex = 0; slideIndex < totalSlidesMobile; slideIndex++)
+                            {
+                                var slideItems = reviewList.Skip(slideIndex).Take(1).ToList();
+                                <div class="carousel-item @(slideIndex == 0 ? "active" : "")">
+                                    <div class="row g-3 justify-content-center">
+                                        @foreach (var review in slideItems)
+                                        {
+                                            <div class="col-md-6 col-12">
+                                                <div class="review-card">
+                                                    <h6 class="review-author">@review.ReviewerName</h6>
+                                                    <p class="review-content">@review.Content</p>
+                                                    <div class="review-rating">
+                                                        @for (int i = 1; i <= 5; i++)
+                                                        {
+                                                            if (i <= review.Rating)
+                                                            {
+                                                                <span class="star-filled">&#9733;</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="star-empty">&#9734;</span>
+                                                            }
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        @if (reviewList.Count > 1)
+                        {
+                            <button class="carousel-control-prev carousel-control-review" type="button" data-bs-target="#reviewCarouselMobile" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next carousel-control-review" type="button" data-bs-target="#reviewCarouselMobile" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>

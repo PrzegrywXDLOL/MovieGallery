@@ -1,3 +1,4 @@
 przerobić login/register
 posprzatac pliki
 sprawdzić czy zgadza się z konwencja
+opcjonalnie przerobić karuzele na js żeby były dynamiczne

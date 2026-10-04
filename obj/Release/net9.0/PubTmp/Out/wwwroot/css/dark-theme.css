@@ -168,7 +168,7 @@ input[type="submit"]:disabled {
     max-height: 15.5rem;
 }
 
-#reviewCarousel {
+#reviewCarouselDesktop, #reviewCarouselMobile {
     padding: 0 3rem;
     overflow: visible;
 }
