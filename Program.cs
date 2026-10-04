@@ -18,7 +18,7 @@ builder.Services.AddDbContext<MovieGalleryDBContext>(option =>
     option.UseSqlServer(connectionString));
 
 var apiKey = Environment.GetEnvironmentVariable("GEMINI_API_KEY");
-var model = "gemini-3.8-flash"; //gemini-3.8-flash or gemini-3.6-flash
+var model = "gemini-3.6-flash"; //gemini-3.8-flash or gemini-3.6-flash
 
 builder.Services.AddChatClient(sp =>
     new GenerativeAIChatClient(apiKey, model));

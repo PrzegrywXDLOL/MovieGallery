@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ToDo.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google_GenerativeAI.Microsoft" Version="3.6.7" />
     <PackageReference Include="Microsoft.Agents.AI" Version="1.21.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.19" />

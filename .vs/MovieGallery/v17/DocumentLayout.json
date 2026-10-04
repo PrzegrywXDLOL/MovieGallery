@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "E:\\Programowanie\\C#\\MovieGallery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\views\\movies\\adminpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:views\\movies\\adminpanel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|e:\\programowanie\\c#\\moviegallery\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{54C579DE-3394-424C-9C11-628FA777CE20}|MovieGallery.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -27,40 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminPanel.cshtml",
-              "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Movies\\AdminPanel.cshtml",
-              "RelativeDocumentMoniker": "Views\\Movies\\AdminPanel.cshtml",
-              "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\Views\\Movies\\AdminPanel.cshtml",
-              "RelativeToolTip": "Views\\Movies\\AdminPanel.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-01T10:06:29.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "site.js",
               "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
               "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\js\\site.js",
               "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkBAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoBAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-09-17T11:31:15.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "dark-theme.css",
               "DocumentMoniker": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\css\\dark-theme.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\dark-theme.css",
               "ToolTip": "E:\\Programowanie\\C#\\MovieGallery\\wwwroot\\css\\dark-theme.css",
               "RelativeToolTip": "wwwroot\\css\\dark-theme.css",
-              "ViewState": "AgIAAIICAAAAAAAAAAAvwIsCAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-17T11:24:10.75Z"
+              "WhenOpened": "2026-09-17T11:24:10.75Z",
+              "EditorCaption": ""
             }
           ]
         }

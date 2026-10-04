@@ -318,6 +318,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function getConversationHistory() {
+        try {
+            const storedMessages = JSON.parse(
+                sessionStorage.getItem(chatStorageKey) || "[]"
+            );
+
+            if (!Array.isArray(storedMessages)) {
+                return [];
+            }
+
+            return storedMessages
+                .filter(function (item) {
+                    return item &&
+                        typeof item.text === "string" &&
+                        (item.type === "user" || item.type === "bot") &&
+                        item.text !== "Hi! How can I help you?";
+                })
+                .slice(-10)
+                .map(function (item) {
+                    return {
+                        role: item.type === "user" ? "user" : "assistant",
+                        content: item.text
+                    };
+                });
+        } catch {
+            return [];
+        }
+    }
+
     toggle.addEventListener("click", function () {
         windowElement.hidden = !windowElement.hidden;
 
@@ -340,6 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        const history = getConversationHistory();
         addMessage(message, "user");
         input.value = "";
 
@@ -347,7 +377,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch("/Movies/AskHelper", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ query: message })
+                body: JSON.stringify({
+                    query: message,
+                    history: history
+                })
             });
 
             if (!response.ok) {

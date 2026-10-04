@@ -20,5 +20,29 @@ namespace MovieGallery.Models
         [NotMapped]
         [JsonIgnore]
         public List<string> SelectedGenres { get; set; } = new List<string>();
+
+        [NotMapped]
+        [JsonIgnore]
+        public static IReadOnlyList<string> Genres { get; } =
+            new[]
+            {
+                "Action",
+                "Adventure",
+                "Animation",
+                "Biography",
+                "Comedy",
+                "Crime",
+                "Documentary",
+                "Drama",
+                "Fantasy",
+                "History",
+                "Horror",
+                "Musical",
+                "Romance",
+                "Sci-Fi",
+                "Superhero",
+                "Thriller",
+                "Western"
+            }.OrderBy(genre => genre).ToArray();
     }
 }

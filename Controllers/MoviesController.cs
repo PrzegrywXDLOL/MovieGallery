@@ -3,32 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using MovieGallery.Agents;
 using MovieGallery.Models;
 using MovieGallery.Services.Interfaces;
+using System.Security.Cryptography;
 
 namespace MovieGallery.Controllers
 {
 
     public class MoviesController : Controller
     {
-        List<string> genreList = new List<string>
-            {
-                "Action",
-                "Animation",
-                "Biography",
-                "Documentary",
-                "Drama",
-                "Fantasy",
-                "Horror",
-                "Comedy",
-                "Crime",
-                "Musical",
-                "Adventure",
-                "Romance",
-                "Sci-Fi",
-                "Thriller",
-                "Western",
-                "Superhero",
-                "History"
-            };
         private readonly IMovieService _movieService;
         private readonly IReviewService _reviewService;
         private readonly IUserService _userService;
@@ -47,10 +28,26 @@ namespace MovieGallery.Controllers
         public async Task<IActionResult> GetPoster(int id)
         {
             var poster = await _movieService.Poster(id);
-            if (poster == null)
+            Response.Headers["Cache-Control"] = "no-cache, must-revalidate";
+
+            if (poster is null)
             {
                 return File("~/Img/Placeholder.jpg", "image/jpeg");
             }
+
+            var etag = $"\"{Convert.ToHexString(SHA256.HashData(poster))}\"";
+            Response.Headers["ETag"] = etag;
+
+            var requestEtags = Request.Headers["If-None-Match"]
+                .ToString()
+                .Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+            if (requestEtags.Contains(etag, StringComparer.Ordinal) ||
+                requestEtags.Contains("*", StringComparer.Ordinal))
+            {
+                return StatusCode(StatusCodes.Status304NotModified);
+            }
+
             return File(poster, "image/jpeg");
         }
 
@@ -58,8 +55,7 @@ namespace MovieGallery.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            genreList.Sort();
-            ViewBag.Genre = genreList;
+            ViewBag.Genre = Movie.Genres;
 
             return View();
         }
@@ -126,8 +122,7 @@ namespace MovieGallery.Controllers
                 if (!string.IsNullOrEmpty(movie.Genre))
                     movie.SelectedGenres = movie.Genre.Split(", ", StringSplitOptions.RemoveEmptyEntries).ToList();
 
-                genreList.Sort();
-                ViewBag.Genre = genreList;
+                ViewBag.Genre = Movie.Genres;
 
                 return View(movie);
             }
@@ -191,12 +186,12 @@ namespace MovieGallery.Controllers
             if (string.IsNullOrWhiteSpace(request.Query))
                 return BadRequest(new { error = "You can't send empty message" });
 
-            var answer = await _chatClient.AskAsync(request.Query);
+            var answer = await _chatClient.AskAsync(request.Query, request.History);
 
             return Json(new { answer });
         }
 
-        public record ChatRequest(string Query);
+        public record ChatRequest(string Query, List<ChatTurn>? History);
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -217,6 +212,11 @@ namespace MovieGallery.Controllers
 
             await _userService.UpdateRole(userData);
             return RedirectToAction(nameof(AdminPanel));
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
         }
     }
 }

@@ -361,9 +361,7 @@ E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\a3ygkwa5zy-2z0ns9
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
-E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\86g38uwcqb-tvy3ps3fp3.gz
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\nkoybbpgvo-a1bf7o50yx.gz
-E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\gimhycsfp2-qyagjfg77k.gz
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\bmg35ktek5-bqjiyaj88i.gz
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\b75o9gxqc5-c2jlpeoesf.gz
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\5ybfehs98h-erw9l3u2r3.gz
@@ -436,3 +434,5 @@ E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\refint\MovieGallery.dll
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\MovieGallery.pdb
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\MovieGallery.genruntimeconfig.cache
 E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\ref\MovieGallery.dll
+E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\86g38uwcqb-8xj8ehji7r.gz
+E:\Programowanie\C#\MovieGallery\obj\Release\net9.0\compressed\gimhycsfp2-g06jy72q0k.gz

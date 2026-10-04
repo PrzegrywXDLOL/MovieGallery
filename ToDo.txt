@@ -1,0 +1,3 @@
+przerobić login/register
+posprzatac pliki
+sprawdzić czy zgadza się z konwencja
