@@ -4,9 +4,9 @@ A web application for browsing a movie collection, rating films, and reading rev
 
 This app is hosted on: https://moviegallery.runasp.net/
 
--You can try this admin account:
-**Username: TestUser@Test.com**
-**Password: ZAQ!2wsx**
+- You can try this admin account:<br>
+**Username: TestUser@Test.com**<br>
+**Password: ZAQ!2wsx**<br>
 
 ## Features
 
@@ -21,8 +21,10 @@ This app is hosted on: https://moviegallery.runasp.net/
 
 - Register and sign in using ASP.NET Core Identity.
 <p align="center">
-	![Register](screenshots/Register.png)
-	![Login](screenshots/Login.png)
+
+![Register](screenshots/Register.png)
+![Login](screenshots/Login.png)
+
 </p>
 
 - Admin features for adding and editing movies and managing user roles. Admin operations require the `Admin` role.
@@ -30,7 +32,9 @@ This app is hosted on: https://moviegallery.runasp.net/
 
 - Ask the AI assistant questions about movies in the catalogue.
 <p align="center">
-	![Ask AI Helper](screenshots/AIHelper.png)
+
+![Ask AI Helper](screenshots/AIHelper.png)
+
 </p>
 
 ## Technology
