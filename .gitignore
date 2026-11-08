@@ -1,1 +1,16 @@
+# Build outputs
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio user & local files
 .vs/
+*.csproj.user
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+appsettings.json
+ToDo.txt

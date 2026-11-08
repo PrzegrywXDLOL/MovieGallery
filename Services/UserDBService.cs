@@ -38,8 +38,9 @@ namespace MovieGallery.Services
 
         public async Task<IEnumerable<UserData>> GetAll()
         {
+            const string adminRoleId = "77393FA6-937E-41EE-BEBB-63C8C792E622";
+
             return await _db.Users
-                .OrderBy(user => user.UserName)
                 .Select(user => new UserData
                 {
                     Id = user.Id,
@@ -50,6 +51,8 @@ namespace MovieGallery.Services
                         .Select(userRole => userRole.RoleId)
                         .FirstOrDefault() ?? string.Empty
                 })
+                .OrderBy(user => user.RoleId == adminRoleId ? 0 : 1)
+                .ThenBy(user => user.UserName)
                 .ToListAsync();
         }
 

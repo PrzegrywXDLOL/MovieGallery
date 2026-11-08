@@ -52,8 +52,6 @@ builder.Services.AddScoped<IReviewDBService, ReviewDBService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserDBService, UserDBService>();
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,4 +1,3 @@
 przerobić login/register
-posprzatac pliki
-sprawdzić czy zgadza się z konwencja
 opcjonalnie przerobić karuzele na js żeby były dynamiczne
+przerobić tabele reviews aby trzymalo id użytkownika a nie jego nazwe (relacja z istniejaca tabela)

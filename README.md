@@ -2,21 +2,36 @@
 
 A web application for browsing a movie collection, rating films, and reading reviews. It also includes an AI assistant that answers questions using movie information available in the application.
 
+This app is hosted on: https://moviegallery.runasp.net/
+
+-You can try this admin account:
+**Username: TestUser@Test.com**
+**Password: ZAQ!2wsx**
+
 ## Features
 
 - Browse the movie catalogue and search for titles.
 ![Main Page](screenshots/MainPage.png)
+
 - View movie details, including description, cast, director, release date, genres, and poster.
 ![Movie Details](screenshots/MovieDetails.png)
+
 - Read and submit movie reviews and ratings.
 ![Write Reviews](screenshots/WriteReviews.png)
+
 - Register and sign in using ASP.NET Core Identity.
-![Accounts](screenshots/Accounts.png)
+<p align="center">
+	![Register](screenshots/Register.png)
+	![Login](screenshots/Login.png)
+</p>
+
 - Admin features for adding and editing movies and managing user roles. Admin operations require the `Admin` role.
 ![Admin Panel](screenshots/AdminPanel.png)
+
 - Ask the AI assistant questions about movies in the catalogue.
-![Ask AI Helper](screenshots/AIHelper.png)
-- Retrieve the catalogue through `GET /api/Movies`.
+<p align="center">
+	![Ask AI Helper](screenshots/AIHelper.png)
+</p>
 
 ## Technology
 
@@ -75,11 +90,11 @@ Find the port in the console output when the application starts.
 
 ## Project structure
 
-- `Controllers/` — application and API controllers.
-- `Views/` — Razor views for the MVC interface.
-- `Models/` — domain models and view models.
-- `Services/` — application and data-access services.
-- `Data/` — Entity Framework Core context and migrations.
-- `Agents/` — AI assistant integration.
-- `Areas/Identity/` — Razor Pages for user account features.
-- `wwwroot/` — static files, including CSS, JavaScript, and image assets.
+- `Controllers/` ï¿½ application and API controllers.
+- `Views/` ï¿½ Razor views for the MVC interface.
+- `Models/` ï¿½ domain models and view models.
+- `Services/` ï¿½ application and data-access services.
+- `Data/` ï¿½ Entity Framework Core context and migrations.
+- `Agents/` ï¿½ AI assistant integration.
+- `Areas/Identity/` ï¿½ Razor Pages for user account features.
+- `wwwroot/` ï¿½ static files, including CSS, JavaScript, and image assets.
