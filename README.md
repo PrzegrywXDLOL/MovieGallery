@@ -83,18 +83,18 @@ Open the HTTP or HTTPS address printed in the console.
 
 `GET /api/Movies` returns the movie catalogue, including reviews. The local URL will look like this:
 
-https://localhost:<port>/api/Movies
+https://localhost:(port)/api/Movies
 
 
 Find the port in the console output when the application starts.
 
 ## Project structure
 
-- `Controllers/` � application and API controllers.
-- `Views/` � Razor views for the MVC interface.
-- `Models/` � domain models and view models.
-- `Services/` � application and data-access services.
-- `Data/` � Entity Framework Core context and migrations.
-- `Agents/` � AI assistant integration.
-- `Areas/Identity/` � Razor Pages for user account features.
-- `wwwroot/` � static files, including CSS, JavaScript, and image assets.
+- `Controllers/`: application and API controllers.
+- `Views/`: Razor views for the MVC interface.
+- `Models/`: domain models and view models.
+- `Services/`: application and data-access services.
+- `Data/`: Entity Framework Core context and migrations.
+- `Agents/`: AI assistant integration.
+- `Areas/Identity/`: Razor Pages for user account features.
+- `wwwroot/`: static files, including CSS, JavaScript, and image assets.
